@@ -7,9 +7,10 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
-import { Item, Footer } from './components';
-import CartContext from '../../../../contexts/cart-context';
-import CardService from '../../../../services/card-service';
+import Item from './item';
+import Footer from './cart-footer';
+import CardService from '../../../services/card-service';
+import useCart from '../../../hooks/useCart';
 
 const getFormattedItems = async (cartItemsData) => {
   const idArr = cartItemsData.map((cartItem) => cartItem.id);
@@ -22,12 +23,12 @@ const getFormattedItems = async (cartItemsData) => {
   return fetchedItemsWithCount;
 };
 
-const ListSection = () => {
+const List = () => {
   const {
     cartItems: cartItemsData,
     addToCart,
     deleteItem,
-  } = React.useContext(CartContext);
+  } = useCart();
   const [cartItems, setCartItems] = React.useState([]);
 
   React.useEffect(() => {
@@ -69,30 +70,13 @@ const ListSection = () => {
         }}
         >
           <Typography variant="h6">Product details</Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'right' }}>
-            <Box
-              minWidth={420}
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                pt: 2,
-                pb: 2,
-                gap: 12,
-              }}
-            >
-              <Typography variant="h6">Qty</Typography>
-              <Typography variant="h6">Price</Typography>
-              <Typography variant="h6">Total</Typography>
-              <Typography variant="h6">Remove</Typography>
-            </Box>
-          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'right' }} />
         </Box>
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'right' }}>
           {cartItems.map(({
             id,
-            img,
+            images,
             title,
             price,
             count,
@@ -100,7 +84,7 @@ const ListSection = () => {
           }) => (
             <Item
               key={id}
-              img={img}
+              images={images}
               title={title}
               count={count}
               setCount={(newCount) => addToCart({ id, count: newCount })}
@@ -117,4 +101,4 @@ const ListSection = () => {
   );
 };
 
-export default ListSection;
+export default List;

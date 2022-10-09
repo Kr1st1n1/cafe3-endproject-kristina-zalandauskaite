@@ -1,11 +1,21 @@
-import * as React from 'react';
-import { Container } from '@mui/material';
-import ListSection from './components/list-section';
+import React from 'react';
+import {
+  Box,
+  Container,
+} from '@mui/material';
+import List from './components/list';
 
 const CartPage = () => (
-  <Container sx={{ pt: 12, pb: 7 }}>
-    <ListSection />
-  </Container>
+  <Box>
+    <Container maxWidth="false" sx={{ maxWidth: '1400px' }}>
+      <Box sx={{
+        p: 15,
+      }}
+      >
+        <List />
+      </Box>
+    </Container>
+  </Box>
 );
 
 export default CartPage;

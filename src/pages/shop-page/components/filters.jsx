@@ -2,10 +2,10 @@ import * as React from 'react';
 import {
   Typography,
   Box,
-  Divider,
   Slider,
   FormControl,
   Button,
+  Container,
 } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 import CategoryService from '../../../services/category-service';
@@ -102,56 +102,63 @@ const Filters = ({ drawerWidth }) => {
 
   return (
     <FilterDrawer>
-      {initialSetupDone && (
-      <Box sx={{
-        display: 'flex', flexDirection: 'column', p: 6, gap: 3, mt: 10,
-      }}
-      >
-        <Box sx={{ width: drawerWidth }}>
-          <Typography variant="h5">Filters</Typography>
-          <Divider sx={{ my: 2 }} />
-          <FormControl sx={{ width: '100%' }}>
-            <Typography variant="h7" sx={{ alignSelf: 'left', pb: 7 }}>Price range</Typography>
-            <Box>
-              <Slider
-                valueLabelDisplay="on"
-                value={priceRange}
-                onChange={(_, newPriceRange) => setPriceRange(newPriceRange)}
-                onChangeCommitted={handlePriceRangeChange}
-                min={MIN}
-                max={MAX}
-              />
-            </Box>
-          </FormControl>
-          <Divider sx={{ my: 2 }} />
-        </Box>
-        <CheckboxGroup
-          label="Filtruoti pagal miestą"
-          options={categories}
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-        />
-        <CheckboxGroup
-          label="Kubilas"
-          options={bathtub}
-          value={selectedBathtub}
-          onChange={handleBathtubChanges}
-        />
-        <Button
-          variant="contained"
-          color="error"
-          onClick={deleteFilters}
-          sx={{
-            minWidth: 200,
-            display: 'flex',
-            alignSelf: 'center',
-            mt: 10,
-          }}
+      <Container maxWidth="false" sx={{ maxWidth: '1400px' }}>
+        {initialSetupDone && (
+        <Box sx={{
+          display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
+        }}
         >
-          Remove filters
-        </Button>
-      </Box>
-      )}
+          <Typography variant="h5" sx={{ pt: 7, fontSize: '18px', fontWeight: '800' }}>FILTRAI</Typography>
+          <Box sx={{ width: drawerWidth }}>
+            <FormControl sx={{ width: '100%' }}>
+              <Typography
+                variant="h7"
+                sx={{
+                  display: 'flex', alignSelf: 'center', pt: 7, fontSize: '18px',
+                }}
+              >
+                Kaina
+              </Typography>
+              <Box>
+                <Slider
+                  valueLabelDisplay="on"
+                  value={priceRange}
+                  onChange={(_, newPriceRange) => setPriceRange(newPriceRange)}
+                  onChangeCommitted={handlePriceRangeChange}
+                  min={MIN}
+                  max={MAX}
+                />
+              </Box>
+            </FormControl>
+          </Box>
+          <CheckboxGroup
+            label="Filtruoti pagal miestą"
+            options={categories}
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+          />
+          <CheckboxGroup
+            label="Kubilas"
+            options={bathtub}
+            value={selectedBathtub}
+            onChange={handleBathtubChanges}
+          />
+          <Button
+            variant="contained"
+            color="success"
+            onClick={deleteFilters}
+            sx={{
+              minWidth: 180,
+              display: 'flex',
+              alignSelf: 'center',
+              mt: 10,
+            }}
+          >
+            Pašalinti filtrus
+          </Button>
+        </Box>
+        )}
+      </Container>
     </FilterDrawer>
   );
 };

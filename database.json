@@ -3,9 +3,15 @@
 		{
 			"id": "A3ADE977-67F9-7D43-DC1E-DA5F81202699",
 			"title": "ATGAIVA,",
-			"description": "nascetur ridiculus mus. Odio tristique pharetra",
+			"description": "nascetur ridiculus mus. Odio tristique pharetra nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "1",
-			"img": "/atgaiva.jpg",
+			"images": [
+				"/atgaiva.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 199.99,
 			"currency": "€",
 			"bathtubId": "2"
@@ -13,19 +19,31 @@
 		{
 			"id": "1A20FE5B-2A77-FE36-D4B3-E09F860688E3",
 			"title": "ATSIPALAIDAVIMAS",
-			"description": "odio tristique pharetra. Quisque ac libero nec ligula consectetuer",
+			"description": "odio tristique pharetra. Quisque ac libero nec ligula consectetuer nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "2",
-			"img": "/atsipalaidavimas.jpg",
+			"images": [
+				"/atsipalaidavimas.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 399.99,
 			"currency": "€",
 			"bathtubId": "1"
 		},
 		{
 			"id": "593CAD15-581D-514A-3956-565A5671272B",
-			"title": "BALANCAS",
-			"description": "vitae, sodales at, velit. Pellentesque ultricies",
+			"title": "BALANSAS",
+			"description": "vitae, sodales at, velit. Pellentesque ultricies nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "3",
-			"img": "/balancas.png",
+			"images": [
+				"/balancas.png",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 89.99,
 			"currency": "€",
 			"bathtubId": "2"
@@ -33,9 +51,15 @@
 		{
 			"id": "2D86D36C-F4FC-578D-139E-5B5C940E9A20",
 			"title": "LAIKAS SAU",
-			"description": "nascetur ridiculus mus. Odio tristique pharetra",
+			"description": "nascetur ridiculus mus. Odio tristique pharetra nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "4",
-			"img": "/laikassau.png",
+			"images": [
+				"/laikassau.png",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 249.99,
 			"currency": "€",
 			"bathtubId": "2"
@@ -43,9 +67,15 @@
 		{
 			"id": "DCE10D7D-3987-EE3E-6E17-75FC38D23ECA",
 			"title": "PABĖGIMAS",
-			"description": "vel est tempor bibendum. Donec felis orci, adipiscing non, luctus",
+			"description": "vel est tempor bibendum. Donec felis orci, adipiscing non, luctus nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "1",
-			"img": "/pabegimas.jpg",
+			"images": [
+				"/pabegimas.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 99.99,
 			"currency": "€",
 			"bathtubId": "2"
@@ -53,9 +83,15 @@
 		{
 			"id": "438A43D5-A392-8B54-32BA-458A46292172",
 			"title": "RAMYBĖ",
-			"description": "eget magna. Suspendisse tristique neque",
+			"description": "eget magna. Suspendisse tristique neque nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "2",
-			"img": "/ramybe.jpg",
+			"images": [
+				"/ramybe.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 199.99,
 			"currency": "€",
 			"bathtubId": "1"
@@ -63,9 +99,15 @@
 		{
 			"id": "22574763-4E41-506D-7382-1713E578436A",
 			"title": "STIPRYBĖ",
-			"description": "sem ut dolor dapibus gravida. Aliquam",
+			"description": "sem ut dolor dapibus gravida. Aliquam nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "3",
-			"img": "/stiprybe.jpg",
+			"images": [
+				"/stiprybe.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 199.99,
 			"currency": "€",
 			"bathtubId": "2"
@@ -73,40 +115,46 @@
 		{
 			"id": "13A3DD4D-460D-C87C-A4F4-56B21C35E815",
 			"title": "TVIRTUMAS",
-			"description": "nascetur ridiculus mus. Odio tristique pharetra",
+			"description": "nascetur ridiculus mus. Odio tristique pharetra nascetur ridiculus mus. Odio tristique pharetra",
 			"categoryId": "4",
-			"img": "/tvirtumas.jpg",
+			"images": [
+				"/tvirtumas.jpg",
+				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
+				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+			],
 			"price": 99.99,
 			"currency": "€",
 			"bathtubId": "2"
 		}
 	],
-	 "categories": [
-		{ 
-			"id": "1", 
-			"label": "Vilnius" 
+	"categories": [
+		{
+			"id": "1",
+			"label": "Vilnius"
 		},
-		{ 
-			"id": "2", 
-			"label": "Kaunas" 
+		{
+			"id": "2",
+			"label": "Kaunas"
 		},
-		{ 
-			"id": "3", 
-			"label": "Šiauliai" 
+		{
+			"id": "3",
+			"label": "Šiauliai"
 		},
-		{ 
-			"id": "4", 
-			"label": "Palanga" 
+		{
+			"id": "4",
+			"label": "Palanga"
 		}
 	],
-	 "bathtubs": [
-		{ 
-			"id": "1", 
-			"label": "Su kubilu" 
+	"bathtubs": [
+		{
+			"id": "1",
+			"label": "Su kubilu"
 		},
-		{ 
-			"id": "2", 
-			"label": "Be kubilu" 
+		{
+			"id": "2",
+			"label": "Be kubilu"
 		}
 	]
 }

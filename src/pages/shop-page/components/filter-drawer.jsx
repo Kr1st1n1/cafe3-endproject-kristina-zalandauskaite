@@ -29,7 +29,7 @@ const FilterDrawer = ({ children }) => {
       </Button>
 
       <Drawer
-        anchor="right"
+        anchor="top"
         open={drawer}
         onClose={() => setDrawer(false)}
       >

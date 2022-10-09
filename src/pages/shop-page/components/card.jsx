@@ -9,7 +9,7 @@ import {
   Button,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import CartContext from '../../../contexts/cart-context';
+import useCart from '../../../hooks/useCart';
 import Image from '../../../components/image';
 
 const wait = (ms) => new Promise((res) => { setTimeout(() => res(), ms); });
@@ -17,7 +17,7 @@ const wait = (ms) => new Promise((res) => { setTimeout(() => res(), ms); });
 const ItemCard = ({
   id,
   title,
-  img,
+  images,
   description,
   price,
   currency,
@@ -25,7 +25,7 @@ const ItemCard = ({
   const navigate = useNavigate();
   const [loading, setLoading] = React.useState(false);
 
-  const { getItemCount, addToCart } = React.useContext(CartContext);
+  const { getItemCount, addToCart } = useCart();
   const itemCountInCart = getItemCount(id);
   const [count, setCount] = React.useState(itemCountInCart === 0 ? 1 : itemCountInCart);
 
@@ -70,7 +70,7 @@ const ItemCard = ({
             <CardMedia
               component="img"
               height="140"
-              image={img}
+              image={(images && images[0]) ?? '/no-img.jpg'}
               sx={{
                 position: 'absolute',
                 top: 0,
@@ -91,28 +91,49 @@ const ItemCard = ({
             mb: 2,
           }}
           >
-            <Typography variant="h5">{title}</Typography>
-            <Typography variant="h5" component="div">
+            <Typography
+              variant="h5"
+              component="h2"
+              sx={{
+                fontSize: '18px',
+              }}
+            >
+              {title}
+
+            </Typography>
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{
+                fontSize: '14px',
+              }}
+            >
               {`${price} ${currency}`}
             </Typography>
           </Box>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              fontSize: '12px',
+            }}
+          >
             {description}
           </Typography>
         </CardContent>
       </Box>
 
-      <Button
-        sx={{ alignSelf: 'center', justifyContent: 'center' }}
-        size="small"
-        variant="contained"
-        onClick={() => navigate(`/item/${id}`)}
-      >
-        More...
-      </Button>
-
-      <CardActions sx={{ p: 2, alignSelf: 'center', justifyContent: 'center' }}>
+      <CardActions sx={{ p: 2, alignSelf: 'center', justifyContent: 'left' }}>
         <Button
+          sx={{ fontSize: '12px' }}
+          size="small"
+          variant="contained"
+          onClick={() => navigate(`/house/${id}`)}
+        >
+          More...
+        </Button>
+        <Button
+          sx={{ fontSize: '12px' }}
           size="small"
           variant="contained"
           onClick={() => addToCart({ id, count })}

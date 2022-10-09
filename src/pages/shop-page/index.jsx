@@ -69,7 +69,7 @@ const ShopPage = () => {
               title,
               description,
               category,
-              img,
+              images,
               price,
               currency,
             }) => (
@@ -79,7 +79,7 @@ const ShopPage = () => {
                   title={title}
                   description={description}
                   category={category}
-                  img={img}
+                  images={images}
                   price={price}
                   currency={currency}
                   updateItem={handleUpdateItems}

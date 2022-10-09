@@ -1,9 +1,10 @@
 import * as React from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setItems] = React.useState([]);
+  const [cartItems, setItems] = useLocalStorage('cartItems', []);
 
   const cartContextValue = React.useMemo(() => ({
     cartItems,
@@ -17,11 +18,16 @@ export const CartProvider = ({ children }) => {
         setItems([...cartItems, item]);
       }
     },
+
     getItemCount: (id) => cartItems.find((x) => x.id === id)?.count ?? 0,
+
+    changeCartItemCount: ({ id, count }) => setItems(
+      cartItems.map((x) => (x.id === id ? { id, count } : x)),
+    ),
 
     deleteItem: (id) => setItems(cartItems.filter((x) => x.id !== id)),
 
-  }), [cartItems]);
+  }), [cartItems, setItems]);
 
   return (
     <CartContext.Provider value={cartContextValue}>{children}</CartContext.Provider>

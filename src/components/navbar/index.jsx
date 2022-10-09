@@ -14,18 +14,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import * as Nav from './components';
-import CartContext from '../../contexts/cart-context';
+import useCart from '../../hooks/useCart';
 
 const pages = [
   { text: 'Pagrindinis', to: '/' },
   { text: 'Nameliai', to: '/shop' },
-  { text: 'Apie mus', to: '/adopt' },
+  { text: 'Apie mus', to: '/about' },
 ];
 
 const drawerWidth = 240;
 
 const Navbar = () => {
-  const { cartItemsCount } = React.useContext(CartContext);
+  const { cartItemsCount } = useCart();
   const navigate = useNavigate();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -48,7 +48,7 @@ const Navbar = () => {
       >
         <ShoppingCartIcon sx={{
           color: 'white',
-          fontSize: 24,
+          fontSize: 12,
         }}
         />
       </IconButton>
@@ -75,9 +75,7 @@ const Navbar = () => {
       >
         <Container
           maxWidth="false"
-          sx={{
-            maxWidth: 1400,
-          }}
+          sx={{ maxWidth: 1400 }}
         >
           <Box sx={(theme) => theme.mixins.navbar}>
             <IconButton
@@ -94,6 +92,7 @@ const Navbar = () => {
                 xs: 'none', sm: 'none', md: 'flex', xxl: 'flex',
               },
               alignSelf: 'stretch',
+              fontSize: '14px',
             }}
             >
               {pages.map(({ text, to }) => <Nav.Link key={to} to={to}>{text}</Nav.Link>)}
@@ -106,14 +105,14 @@ const Navbar = () => {
                 onClick={() => navigate('/cart')}
               >
                 <Badge badgeContent={cartItemsCount} color="secondary">
-                  <ShoppingCartIcon />
+                  <ShoppingCartIcon sx={{ fontSize: '22px' }} />
                 </Badge>
               </IconButton>
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <Nav.Link to="/auth/login">
                   <PersonOutlineIcon sx={{
                     color: 'white',
-                    fontSize: 27,
+                    fontSize: 24,
                   }}
                   />
 
@@ -125,7 +124,7 @@ const Navbar = () => {
                     fontSize: 14,
                   }}
                 >
-                  NAUJAS VARTOTOJAS
+                  Naujas vartotojas
 
                 </Nav.Link>
               </Box>

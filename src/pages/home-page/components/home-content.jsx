@@ -63,7 +63,7 @@ const HomeContent = () => (
                 NAMELIAI
               </Home.ButtonLink>
             </Link>
-            <Link to="/adopt" style={{ textDecoration: 'none' }}>
+            <Link to="/about" style={{ textDecoration: 'none' }}>
               <Home.ButtonLink variant="contained">
                 APIE MUS
               </Home.ButtonLink>
@@ -97,7 +97,7 @@ const HomeContent = () => (
             sx={{
               position: 'absolute',
               top: 150,
-              left: 268,
+              left: 280,
               zIndex: 4,
             }}
           />

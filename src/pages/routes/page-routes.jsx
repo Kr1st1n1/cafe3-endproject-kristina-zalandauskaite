@@ -7,10 +7,10 @@ import RegisterPage from '../register-page';
 import LoginPage from '../login-page';
 import HomePage from '../home-page';
 import ShopPage from '../shop-page';
-import AdoptDonatePage from '../adopt-page';
+import AboutPage from '../about-page';
 import ErrorPage from '../error-page';
 import CartPage from '../cart-page';
-import ItemPage from '../item-page';
+import HousePage from '../house-page';
 import OrderPage from '../order-page';
 
 const PageRoutes = () => (
@@ -18,10 +18,10 @@ const PageRoutes = () => (
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/shop" element={<ShopPage />} />
-      <Route path="/adopt" element={<AdoptDonatePage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/order" element={<OrderPage />} />
-      <Route path="item/:itemId" element={<ItemPage />} />
+      <Route path="house/:houseId" element={<HousePage />} />
 
       <Route path="auth/" element={<AuthLayout />}>
         <Route path="login" element={<LoginPage />} />

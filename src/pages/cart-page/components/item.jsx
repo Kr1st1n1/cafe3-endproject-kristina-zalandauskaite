@@ -7,11 +7,11 @@ import {
   IconButton,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Image from '../../../../../components/image';
+import Image from '../../../components/image';
 
 const Item = ({
   title,
-  img,
+  images,
   price,
   count,
   setCount,
@@ -27,7 +27,7 @@ const Item = ({
     }}
     >
       <Image
-        src={img}
+        src={(images && images[0]) ?? '/no-img.jpg'}
         sx={{
           height: 100,
           width: 100,

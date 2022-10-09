@@ -20,16 +20,35 @@ const Footer = ({ totalPrice }) => (
       display: 'flex',
       gap: 10,
       px: 16,
+      py: 8,
     }}
     >
-      <Typography variant="h6">TOTAL COST:</Typography>
-      <Typography variant="h6">{totalPrice.toFixed(2)}</Typography>
+      <Typography
+        variant="h6"
+        sx={{
+          fontSize: '16px',
+        }}
+      >
+        TOTAL COST:
+
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: '16px',
+        }}
+        variant="h6"
+      >
+        {totalPrice.toFixed(2)}
+
+      </Typography>
     </Box>
 
     <Link to="/order" style={{ textDecoration: 'none' }}>
       <Button sx={{
-        p: 2,
-        backgroundColor: 'blue',
+        backgroundColor: 'primary.main',
+        color: 'secondary.main',
+        minWidth: 180,
+        maxHeight: 36,
       }}
       >
         Next

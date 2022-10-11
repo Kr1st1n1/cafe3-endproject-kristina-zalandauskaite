@@ -130,7 +130,7 @@ const ItemCard = ({
           variant="contained"
           onClick={() => navigate(`/house/${id}`)}
         >
-          More...
+          DAUGIAU
         </Button>
         <Button
           sx={{ fontSize: '12px' }}
@@ -139,8 +139,7 @@ const ItemCard = ({
           onClick={() => addToCart({ id, count })}
           disabled={count === itemCountInCart}
         >
-          Add to cart
-
+          UŽSAKYTI
         </Button>
       </CardActions>
     </Card>

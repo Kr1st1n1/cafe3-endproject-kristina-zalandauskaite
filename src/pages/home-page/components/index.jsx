@@ -9,6 +9,10 @@ export const Content = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('xxl')]: {
     margin: 'auto',
   },
+  [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 }));
 
 export const ButtonLink = styled(Button)(({ theme }) => ({
@@ -18,13 +22,18 @@ export const ButtonLink = styled(Button)(({ theme }) => ({
   height: 38,
   color: theme.palette.secondary.main,
   background: theme.palette.primary.main,
+  fontFamily: 'Montserrat',
 }));
 
-export const Footer = styled(Box)(() => ({
+export const Footer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
+  [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+    padding: 15,
+  },
 }));
 
 export const IconContent = styled(Box)(({ theme }) => ({

@@ -25,6 +25,11 @@ const StyledSwiper = styled(ReactSwiper)(({ theme }) => ({
   '.swiper-pagination-bullet-active': {
     backgroundColor: theme.palette.primary.main,
   },
+
+  [theme.breakpoints.up('md')]: {
+    width: '100%',
+    height: '100%',
+  },
 }));
 
 const Swiper = ({ images }) => {
@@ -44,7 +49,7 @@ const Swiper = ({ images }) => {
     >
       {images.map((image) => (
         <SwiperSlide key={image}>
-          <Image src={image} sx={{ height: 'calc(100% - 30px)' }} />
+          <Image src={image} sx={{ height: 'calc(100% - 30px)', position: 'cover' }} />
         </SwiperSlide>
       ))}
       <IconButton

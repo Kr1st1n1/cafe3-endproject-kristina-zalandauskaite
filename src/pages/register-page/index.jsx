@@ -19,27 +19,27 @@ const initialValues = {
 
 const validationSchema = yup.object({
   email: yup.string()
-    .required('Required')
-    .email('Invalid email format'),
+    .required('Privaloma')
+    .email('Neteisingas pašto formatas'),
   emailConfirmation: yup.string()
-    .required('Required')
-    .oneOf([yup.ref('email')], 'e-mails do not match'),
+    .required('Privaloma')
+    .oneOf([yup.ref('email')], 'El. paštas nesutampa'),
   password: yup.string()
-    .required('Required')
-    .min(8, 'At least 8 characters required')
-    .matches(/[a-z]/, 'At least one lowercase letter is required')
-    .matches(/[A-Z]/, 'At least one capital letter is required')
-    .matches(/\d/, 'At least one number is required')
-    .matches(/\W/, 'At least one special character is required'),
+    .required('Privaloma')
+    .min(8, 'Mažiausiai 8 simboliai')
+    .matches(/[a-z]/, 'Bent viena mažoji raidė')
+    .matches(/[A-Z]/, 'Bent viena didžioji raidė')
+    .matches(/\d/, 'Bent vienas skaičius')
+    .matches(/\W/, 'Bent vienas specialus simbolis'),
   passwordConfirmation: yup.string()
-    .required('Required')
-    .oneOf([yup.ref('password')], 'Passwords do not match'),
+    .required('Privaloma')
+    .oneOf([yup.ref('password')], 'Slaptažodžiai nesutampa'),
   fullname: yup.string()
-    .required('Required')
-    .min(6, 'At least 6 characters required')
-    .matches(/^[a-ząčęėįšųūž ]+$/i, 'Can only contain letters and spaces'),
-  birthdate: yup.date('Invalid date format, please provide format')
-    .max(dateNow, 'Cannot choose a future time'),
+    .required('Privaloma')
+    .min(6, 'Mažiausiai 6 simboliai')
+    .matches(/^[a-ząčęėįšųūž ]+$/i, 'Gali būti tik raidės ir tarpai'),
+  birthdate: yup.date('Neteisingas datos formatas, pateikite formatu: YYYY-MM-DD')
+    .max(dateNow, 'Negalite pasirinkti ateities laiko'),
 });
 
 const RegisterPage = () => {
@@ -59,14 +59,14 @@ const RegisterPage = () => {
 
   return (
     <AuthForm
-      title="Registration"
-      btnText="Registration"
+      title="Registracija"
+      btnText="Registruotis"
       onSubmit={handleSubmit}
       disabled={!dirty || !isValid}
     >
       <TextField
         name="email"
-        label="E-mail"
+        label="E-paštas"
         type="email"
         variant="filled"
         fullWidth
@@ -78,7 +78,7 @@ const RegisterPage = () => {
       />
       <TextField
         name="emailConfirmation"
-        label="Email confirmation"
+        label="E-pašto patvirtinimas"
         type="email"
         variant="filled"
         fullWidth
@@ -90,7 +90,7 @@ const RegisterPage = () => {
       />
       <TextField
         name="password"
-        label="Password"
+        label="Slaptažodis"
         type="password"
         variant="filled"
         fullWidth
@@ -102,7 +102,7 @@ const RegisterPage = () => {
       />
       <TextField
         name="passwordConfirmation"
-        label="Password confirmation"
+        label="Slaptažodžio patvirtinimas"
         type="password"
         variant="filled"
         fullWidth
@@ -114,7 +114,7 @@ const RegisterPage = () => {
       />
       <TextField
         name="fullname"
-        label="Name and Surname"
+        label="Pilnas vardas"
         type="text"
         variant="filled"
         fullWidth
@@ -140,7 +140,7 @@ const RegisterPage = () => {
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...params}
             name="birthdate"
-            label="date of birth"
+            label="gimimo diena"
             variant="filled"
             fullWidth
             onBlur={handleBlur}

@@ -47,4 +47,18 @@ const lightTheme = createTheme(mixinTheme, {
   },
 });
 
+export const fontTheme = createTheme({
+  typography: {
+    fontFamily: [
+      'Nunito',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'Montserrat',
+      'sans-serif',
+      'mase',
+    ].join(','),
+  },
+});
+
 export default lightTheme;

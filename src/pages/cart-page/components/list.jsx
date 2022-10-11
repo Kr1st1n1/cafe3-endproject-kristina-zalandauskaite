@@ -54,12 +54,17 @@ const List = () => {
       }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h5">Shopping Cart</Typography>
+          <Typography variant="h5">Prekių krepšelis</Typography>
           <ShoppingCartIcon sx={{ color: '#1C3879', fontSize: 45 }} />
         </Box>
-        <Link to="/shop" style={{ textDecoration: 'none', display: 'flex', gap: 7 }}>
+        <Link
+          to="/shop"
+          style={{
+            color: '#1C3879', textDecoration: 'none', display: 'flex', gap: 7,
+          }}
+        >
           <KeyboardBackspaceIcon fontSize="large" />
-          <Typography variant="h6">Continue Shopping</Typography>
+          <Typography variant="h6" sx={{ color: 'black', fontWeight: 700 }}>Grįžti atgal</Typography>
         </Link>
         <Divider sx={{ pt: 3, pb: 3 }} />
         <Box sx={{
@@ -69,7 +74,7 @@ const List = () => {
           pb: 2,
         }}
         >
-          <Typography variant="h6">Product details</Typography>
+          <Typography variant="h6">Prekė</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'right' }} />
         </Box>
 

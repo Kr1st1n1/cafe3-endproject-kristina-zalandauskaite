@@ -47,7 +47,7 @@ const OrderSection = () => {
           variant="contained"
           size="large"
         >
-          Payment
+          PRIEITI PRIE APMOKĖJIMO
 
         </Button>
       </Box>

@@ -24,15 +24,15 @@ const HomeFooter = () => (
       <Home.Footer>
         <Home.IconContent>
           <InstagramIcon sx={{
-            fontSize: { xs: 19, md: 24, xxl: 24 },
+            fontSize: { xs: 19, md: 24, xxl: 20 },
           }}
           />
           <FacebookIcon sx={{
-            fontSize: { xs: 19, md: 24, xxl: 24 },
+            fontSize: { xs: 19, md: 24, xxl: 20 },
           }}
           />
           <TwitterIcon sx={{
-            fontSize: { xs: 19, md: 24, xxl: 24 },
+            fontSize: { xs: 19, md: 24, xxl: 20 },
           }}
           />
         </Home.IconContent>
@@ -41,10 +41,10 @@ const HomeFooter = () => (
           fontSize: 14,
         }}
         >
-          <Typography sx={{ fontSize: 9 }}> KONTAKTAI</Typography>
-          <Typography sx={{ fontSize: 9 }}>Mob.: +37 0 555555555555</Typography>
-          <Typography sx={{ fontSize: 9 }}>Adresas.: tenkurgrazu 100 g. Simtasbalu</Typography>
-          <Typography sx={{ fontSize: 9 }}>Fax.: 88888888</Typography>
+          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}> KONTAKTAI</Typography>
+          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Mob.: +37 0 555555555555</Typography>
+          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Adresas.: tenkurgrazu 100 g. Simtasbalu</Typography>
+          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Fax.: 88888888</Typography>
         </Box>
       </Home.Footer>
     </Container>

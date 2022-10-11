@@ -11,15 +11,15 @@ const initialValues = {
 
 const validationSchema = yup.object({
   email: yup.string()
-    .required('Required')
-    .email('Invalid email format'),
+    .required('Privaloma')
+    .email('Neteisingas el. pašto formatas'),
   password: yup.string()
-    .required('Required')
-    .min(8, 'At least 8 characters required')
-    .matches(/[a-z]/, 'At least one lowercase letter is required')
-    .matches(/[A-Z]/, 'At least one capital letter is required')
-    .matches(/\d/, 'At least one number is required')
-    .matches(/\W/, 'At least one special character is required'),
+    .required('Privaloma')
+    .min(8, 'Mažiausiai 8 simboliai')
+    .matches(/[a-z]/, 'Bent viena mažoji raidė')
+    .matches(/[A-Z]/, 'Bent viena didžioji raidė')
+    .matches(/\d/, 'Bent vienas skaičius')
+    .matches(/\W/, 'Bent vienas specialus simbolis'),
 });
 
 const LoginPage = () => {
@@ -39,14 +39,14 @@ const LoginPage = () => {
 
   return (
     <AuthForm
-      title="SIGN IN"
+      title="Prisijungti"
       onSubmit={handleSubmit}
       disabled={!dirty || !isValid}
-      btnText="Sign in"
+      btnText="Prisijungti"
     >
       <TextField
         name="email"
-        label="E-mail"
+        label="E-paštas"
         type="email"
         variant="filled"
         fullWidth
@@ -58,7 +58,7 @@ const LoginPage = () => {
       />
       <TextField
         name="password"
-        label="Password"
+        label="Slaptažodis"
         type="password"
         variant="filled"
         fullWidth

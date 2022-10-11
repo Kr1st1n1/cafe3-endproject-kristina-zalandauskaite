@@ -29,7 +29,7 @@ const Footer = ({ totalPrice }) => (
           fontSize: '16px',
         }}
       >
-        TOTAL COST:
+        VISO:
 
       </Typography>
       <Typography
@@ -51,8 +51,7 @@ const Footer = ({ totalPrice }) => (
         maxHeight: 36,
       }}
       >
-        Next
-
+        KITAS
       </Button>
     </Link>
 

@@ -3,18 +3,17 @@ import {
   Container, Box, Typography,
 } from '@mui/material';
 import Image from '../../components/image';
-import BgImage from '../../asstest/greenbg.jpg';
+import BgImage from '../../assets/gr.jpg';
 
 const AboutPage = () => (
   <Box sx={{
     backgroundImage: `url(${BgImage})`,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'cover',
+    backgroundPosition: 'center',
     height: '100vh',
     width: '100%',
     color: 'primary.dark',
     position: 'absolute',
-    backgroundColor: 'rgba(155, 155, 155, 0.8)',
     top: 0,
     bottom: 0,
     left: 0,
@@ -27,7 +26,7 @@ const AboutPage = () => (
       bottom: 0,
       left: 0,
       right: 0,
-      bgcolor: 'rgba(29, 25, 25, 0.63)',
+      bgcolor: 'rgba(231, 225, 225, 0.3)',
     }}
     >
       <Container maxWidth="false" sx={{ px: 36, maxWidth: 1400 }}>

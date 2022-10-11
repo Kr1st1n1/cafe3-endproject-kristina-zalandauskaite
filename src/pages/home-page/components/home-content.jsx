@@ -5,15 +5,21 @@ import {
   Container,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import BgImage from '../../../assets/forest.jpg';
 import * as Home from './index';
 
 const HomeContent = () => (
-  <Box>
+  <Box sx={{
+    backgroundImage: { xs: `url(${BgImage})`, lg: 'none' },
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: 600,
+  }}
+  >
     <Container
       maxWidth="false"
-      sx={{
-        maxWidth: 1400,
-      }}
+      sx={{ maxWidth: 1400 }}
     >
       <Home.Content>
         <Box sx={{
@@ -25,9 +31,12 @@ const HomeContent = () => (
             component="h1"
             sx={() => ({
               letterSpacing: '0.08em',
-              color: 'black',
+              color: { xs: 'common.light', lg: 'black' },
               textAlign: 'center',
               fontSize: { xs: '1rem' },
+              fontWeight: '700',
+              pt: { xs: 5 },
+              fontFamily: 'Montserrat',
             })}
           >
             ATOTRŪKIS TAVO PROTUI IR KŪNUI...
@@ -36,11 +45,14 @@ const HomeContent = () => (
           <Typography
             variant="h6"
             sx={() => ({
-              color: 'black',
-              fontSize: { xs: '1rem', md: '1rem', xxl: '0.8rem' },
+              color: { xs: 'common.light', lg: 'black' },
+              fontSize: { xs: '0.8rem', md: '1rem', xxl: '0.8rem' },
               textAlign: 'center',
               pt: 3,
-              px: 11,
+              px: {
+                xs: 1, xl: 11, lg: 1,
+              },
+              fontFamily: 'Montserrat',
             })}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
@@ -71,44 +83,55 @@ const HomeContent = () => (
           </Box>
         </Box>
         <Box
-          width="50%"
           sx={{
-            display: 'flex',
+            display: { lg: 'flex', xs: 'none' },
             justifyContent: 'center',
+            alignItems: 'center',
             position: 'relative',
             minHeight: 640,
+            width: { xs: '100%', lg: '50%' },
           }}
         >
           <Box
             component="img"
-            width="250px"
             src="/stiprybe.jpg"
             sx={{
+              width: { sm: '37%', xs: '43%' },
               position: 'absolute',
-              top: 81,
-              left: 20,
+              top: {
+                xxl: 81, xl: 81, lg: 143, xs: 84,
+              },
+              left: {
+                xxl: 20, xl: 20, lg: 20, xs: 35,
+              },
               zIndex: 1,
             }}
           />
           <Box
             component="img"
-            width="250px"
             src="/balancas.png"
             sx={{
               position: 'absolute',
-              top: 150,
-              left: 280,
+              width: { sm: '37%', xs: '44%' },
+              top: {
+                xxl: 150, xl: 150, lg: 194, xs: 234,
+              },
+              left: {
+                xxl: 280, xl: 280, lg: 205, xs: 165,
+              },
               zIndex: 4,
             }}
           />
           <Box
             component="img"
-            width="240px"
             src="/pabegimas.jpg"
             sx={{
               position: 'absolute',
-              top: 300,
-              left: 118,
+              width: { sm: '37%', xs: '45%' },
+              top: {
+                xxl: 300, xl: 300, lg: 300, xs: 362,
+              },
+              left: { lg: 118, xs: 30 },
               zIndex: 3,
             }}
           />

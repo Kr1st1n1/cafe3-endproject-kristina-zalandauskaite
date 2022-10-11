@@ -43,10 +43,10 @@ const ShopPage = () => {
           sx={{
             fontSize: '1rem',
             py: 3,
+            fontFamily: 'Montserrat',
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Voluptatem voluptate, accusamus
+          NAMELIAI NUOMAI
         </Typography>
         <Typography
           variant="h5"
@@ -54,6 +54,7 @@ const ShopPage = () => {
           sx={{
             fontSize: '0.9rem',
             py: 3,
+            fontFamily: 'Montserrat',
           }}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -94,9 +95,10 @@ const ShopPage = () => {
               width: '100%',
               textAlign: 'center',
               color: 'error.main',
+              fontFamily: 'Montserrat',
             }}
           >
-            No requested items
+            Nėra duomenų
           </Typography>
         )}
       </Box>

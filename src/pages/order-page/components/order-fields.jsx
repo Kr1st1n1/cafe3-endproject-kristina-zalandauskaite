@@ -12,15 +12,15 @@ import {
 const deliveryMethods = [
   {
     id: '1',
-    label: 'I will pick it up by myself',
+    label: 'Atsiųsti kuponą el.paštu',
   },
   {
     id: '2',
-    label: 'Deliver to post maschine',
+    label: 'Atsiųsti kuponą adresuotu paštu',
   },
   {
     id: '3',
-    label: 'Deliver by courier to the specified address',
+    label: 'Pristatyti su kurjerių tarnyba',
   },
 ];
 
@@ -31,7 +31,7 @@ const OrderFields = ({
   setDelivery,
 }) => (
   <>
-    <Divider textAlign="left">Order information</Divider>
+    <Divider textAlign="left">Užsakymo informacija</Divider>
     <Box sx={{ alignItems: 'left' }}>
       <FormControlLabel
         control={(
@@ -40,7 +40,7 @@ const OrderFields = ({
             onChange={(_, AgreementTerms) => setAgreement(AgreementTerms)}
           />
           )}
-        label="I accept the terms of service"
+        label="Aš sutinku su paslaugų teikimo sąlygomis"
       />
     </Box>
     <Box align="center">
@@ -61,7 +61,7 @@ const OrderFields = ({
           size,
         }) => (
           <TextField
-            label="Delivery method"
+            label="Pristatymo sąlygos"
             InputLabelProps={InputLabelProps}
             InputProps={InputProps}
             inputProps={inputProps}

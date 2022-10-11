@@ -15,9 +15,10 @@ export const Link = styled(NavLink, {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: theme.spacing(0, 3),
+    padding: spacing(0, 2),
     textDecoration: 'none',
     color: theme.palette.secondary.main,
+    fontFamily: 'Montserrat',
   };
 
   return contracted
@@ -28,6 +29,7 @@ export const Link = styled(NavLink, {
       padding: spacing(2, 0),
       fontWeight: 400,
       fontSize: 14,
+      fontFamily: 'Montserrat',
 
       '&.active': {
         color: common.light,
@@ -44,7 +46,7 @@ export const Link = styled(NavLink, {
       color: grey[200],
 
       '&.active': {
-        boxShadow: `inset 0 -2px 0 ${theme.palette.common.white}`,
+        boxShadow: `inset 0 -2px 0 ${common.white}`,
       },
 
       ':hover': {

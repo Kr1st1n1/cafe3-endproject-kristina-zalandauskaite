@@ -7,10 +7,8 @@
 			"categoryId": "1",
 			"images": [
 				"/atgaiva.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 199.99,
 			"currency": "€",
@@ -23,10 +21,8 @@
 			"categoryId": "2",
 			"images": [
 				"/atsipalaidavimas.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 399.99,
 			"currency": "€",
@@ -39,10 +35,8 @@
 			"categoryId": "3",
 			"images": [
 				"/balancas.png",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 89.99,
 			"currency": "€",
@@ -55,10 +49,8 @@
 			"categoryId": "4",
 			"images": [
 				"/laikassau.png",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 249.99,
 			"currency": "€",
@@ -71,10 +63,8 @@
 			"categoryId": "1",
 			"images": [
 				"/pabegimas.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 99.99,
 			"currency": "€",
@@ -87,10 +77,8 @@
 			"categoryId": "2",
 			"images": [
 				"/ramybe.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 199.99,
 			"currency": "€",
@@ -103,10 +91,8 @@
 			"categoryId": "3",
 			"images": [
 				"/stiprybe.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 199.99,
 			"currency": "€",
@@ -119,10 +105,8 @@
 			"categoryId": "4",
 			"images": [
 				"/tvirtumas.jpg",
-				"https://m.media-amazon.com/images/I/61bl9LEGbRL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61uwJfKf5hL._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/61HiMJYWo-L._AC_SL1500_.jpg",
-				"https://m.media-amazon.com/images/I/71IgBbGV6oL._AC_SL1280_.jpg"
+				"/cabinone.jpg",
+				"/cabintwo.jpg"
 			],
 			"price": 99.99,
 			"currency": "€",
@@ -154,7 +138,7 @@
 		},
 		{
 			"id": "2",
-			"label": "Be kubilu"
+			"label": "Be kubilo"
 		}
 	]
 }

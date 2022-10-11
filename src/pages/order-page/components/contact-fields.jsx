@@ -29,9 +29,9 @@ const cities = [
 ];
 
 const genders = [
-  { value: 'female', label: 'Ms.' },
-  { value: 'male', label: 'Mr.' },
-  { value: 'other', label: 'Other' },
+  { value: 'female', label: 'Ponia' },
+  { value: 'male', label: 'Ponas' },
+  { value: 'other', label: 'Kita' },
 ];
 
 const ContactFields = ({
@@ -45,28 +45,28 @@ const ContactFields = ({
   setCity,
 }) => (
   <>
-    <Divider textAlign="left">Contact information</Divider>
+    <Divider textAlign="left">Kontaktinė informacija</Divider>
 
     <TextField
-      name="fullname"
-      label="fullname"
+      name="pilnas vardas"
+      label="pilnas vardas"
       variant="filled"
       fullWidth
       onChange={(event) => setFullname(event.target.value)}
       value={fullname}
     />
     <TextField
-      name="email"
-      label="email"
+      name="E-paštas"
+      label="E-paštas"
       variant="filled"
       fullWidth
       onChange={(event) => setEmail(event.target.value)}
       value={email}
     />
     <TextField
-      name="City"
+      name="Miestas"
       select
-      label="City"
+      label="Miestas"
       variant="filled"
       fullWidth
       onChange={(event) => setCity(event.target.value)}
@@ -80,7 +80,7 @@ const ContactFields = ({
     <FormControl sx={{ width: '100%' }}>
       <RadioGroup
         sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
-        name="gender"
+        name="lytis"
         value={gender}
         key={gender}
         onChange={(_, newGender) => setGender(newGender)}

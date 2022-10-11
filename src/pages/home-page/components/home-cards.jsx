@@ -24,8 +24,9 @@ const HomeCards = () => (
       <Box sx={{
         display: 'flex',
         justifyContent: 'space-around',
+        flexDirection: { xs: 'column', lg: 'row' },
         height: 'auto',
-        p: 4,
+        py: 4,
       }}
       >
         <Box sx={{
@@ -35,13 +36,13 @@ const HomeCards = () => (
           px: 3,
         }}
         >
-          <Typography sx={{ fontSize: 12 }}>RAMYBĖ</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>RAMYBĖ</Typography>
           <SelfImprovementIcon sx={{
             fontSize: 46,
             color: '#142223;',
           }}
           />
-          <Typography sx={{ fontSize: 12 }} textAlign="center">
+          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }} textAlign="center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             labore, ut autem ullam, deleniti explicabo eos!
           </Typography>
@@ -51,15 +52,16 @@ const HomeCards = () => (
           flexDirection: 'column',
           alignItems: 'center',
           px: 3,
+          pt: 2,
         }}
         >
-          <Typography sx={{ fontSize: 12 }}>POILSIS</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>POILSIS</Typography>
           <SpaIcon sx={{
             fontSize: 46,
             color: '#142223;',
           }}
           />
-          <Typography sx={{ fontSize: 12 }} textAlign="center">
+          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }} textAlign="center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             labore, ut autem ullam, deleniti explicabo eos!
           </Typography>
@@ -69,16 +71,17 @@ const HomeCards = () => (
           flexDirection: 'column',
           alignItems: 'center',
           px: 3,
+          pt: 2,
         }}
         >
-          <Typography sx={{ fontSize: 12 }}>PABĖGIMAS</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>PABĖGIMAS</Typography>
           <PsychologyIcon sx={{
             fontSize: 46,
             color: '#142223;',
           }}
           />
           <Typography
-            sx={{ fontSize: 12 }}
+            sx={{ fontSize: 12, fontFamily: 'Montserrat' }}
             textAlign="center"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.

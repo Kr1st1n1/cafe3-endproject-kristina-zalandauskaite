@@ -16,19 +16,21 @@ const InfoSection = ({ house }) => (
     <Rectangle>
       <Swiper images={house.images} />
     </Rectangle>
-    <Typography variant="h4" sx={{ mb: 1 }}>{house.title}</Typography>
-    <Typography variant="h5" color="primary" sx={{ mb: 2 }}>{`${house.price}${house.currency}`}</Typography>
-    <Typography variant="body1">{house.description}</Typography>
-    <List>
-      {[
-        { text: house.category.label, Icon: CategoryIcon },
-      ].map(({ text, Icon }) => (
-        <ListItem key={text}>
-          <ListItemIcon><Icon /></ListItemIcon>
-          <ListItemText primary={text} />
-        </ListItem>
-      ))}
-    </List>
+    <Box>
+      <Typography variant="h4" sx={{ mb: 1, fontFamily: 'Montserrat' }}>{house.title}</Typography>
+      <Typography variant="h5" color="primary" sx={{ mb: 2, fontFamily: 'Montserrat' }}>{`${house.price}${house.currency}`}</Typography>
+      <Typography variant="body1" sx={{ fontFamily: 'Montserrat' }}>{house.description}</Typography>
+      <List>
+        {[
+          { text: house.category.label, Icon: CategoryIcon },
+        ].map(({ text, Icon }) => (
+          <ListItem key={text}>
+            <ListItemIcon><Icon /></ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   </Box>
 
 );

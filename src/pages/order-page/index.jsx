@@ -22,7 +22,10 @@ const OrderSection = () => {
           display: 'flex',
           flexDirection: 'column',
           gap: 3,
-          width: { xs: '100%', md: '50%', xxl: '50%' },
+          width: { xs: '100%', md: '30%', xxl: '30%' },
+          border: '1px solid black',
+          p: 6,
+          borderRadius: '4px',
         }}
       >
         <ContactFields
@@ -45,7 +48,7 @@ const OrderSection = () => {
         <Button
           type="submit"
           variant="contained"
-          size="large"
+          size="small"
         >
           PRIEITI PRIE APMOKĖJIMO
 

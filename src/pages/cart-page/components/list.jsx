@@ -74,7 +74,7 @@ const List = () => {
           pb: 2,
         }}
         >
-          <Typography variant="h6">Prekė</Typography>
+
           <Box sx={{ display: 'flex', justifyContent: 'right' }} />
         </Box>
 

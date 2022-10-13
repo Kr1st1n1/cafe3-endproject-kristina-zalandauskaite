@@ -31,7 +31,7 @@ const OrderFields = ({
   setDelivery,
 }) => (
   <>
-    <Divider textAlign="left">Užsakymo informacija</Divider>
+    <Divider sx={{ fontSize: '14px' }} textAlign="left">Užsakymo informacija</Divider>
     <Box sx={{ alignItems: 'left' }}>
       <FormControlLabel
         control={(

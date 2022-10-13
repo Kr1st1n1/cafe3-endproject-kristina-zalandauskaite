@@ -41,10 +41,10 @@ const HomeFooter = () => (
           fontSize: 14,
         }}
         >
-          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}> KONTAKTAI</Typography>
-          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Mob.: +37 0 555555555555</Typography>
-          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Adresas.: tenkurgrazu 100 g. Simtasbalu</Typography>
-          <Typography sx={{ fontSize: 10, fontFamily: 'Montserrat' }}>Fax.: 88888888</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}> KONTAKTAI</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Mob.: +37 0 555555555555</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Adresas.: tenkurgrazu 100 g. Simtasbalu</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Fax.: 88888888</Typography>
         </Box>
       </Home.Footer>
     </Container>

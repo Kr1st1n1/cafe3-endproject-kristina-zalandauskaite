@@ -45,11 +45,12 @@ const ContactFields = ({
   setCity,
 }) => (
   <>
-    <Divider textAlign="left">Kontaktinė informacija</Divider>
+    <Divider sx={{ fontSize: '14px' }} textAlign="left">Kontaktinė informacija</Divider>
 
     <TextField
       name="pilnas vardas"
       label="pilnas vardas"
+      size="small"
       variant="filled"
       fullWidth
       onChange={(event) => setFullname(event.target.value)}
@@ -58,6 +59,7 @@ const ContactFields = ({
     <TextField
       name="E-paštas"
       label="E-paštas"
+      size="small"
       variant="filled"
       fullWidth
       onChange={(event) => setEmail(event.target.value)}
@@ -67,6 +69,7 @@ const ContactFields = ({
       name="Miestas"
       select
       label="Miestas"
+      size="small"
       variant="filled"
       fullWidth
       onChange={(event) => setCity(event.target.value)}
@@ -79,7 +82,9 @@ const ContactFields = ({
 
     <FormControl sx={{ width: '100%' }}>
       <RadioGroup
-        sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
+        sx={{
+          display: 'flex', flexDirection: 'row', justifyContent: 'center',
+        }}
         name="lytis"
         value={gender}
         key={gender}

@@ -19,7 +19,6 @@ const AuthForm = ({
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         gap: 3,
       }}
       onSubmit={onSubmit}

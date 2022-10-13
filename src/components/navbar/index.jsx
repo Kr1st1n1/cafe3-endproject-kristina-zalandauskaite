@@ -29,6 +29,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [currentButton, setCurrentButton] = React.useState(1);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -48,7 +49,7 @@ const Navbar = () => {
       >
         <ShoppingCartIcon sx={{
           color: 'white',
-          fontSize: 12,
+          fontSize: 14,
         }}
         />
       </IconButton>
@@ -93,9 +94,22 @@ const Navbar = () => {
               },
               alignSelf: 'stretch',
               fontSize: '14px',
+              letterSpacing: 1,
             }}
             >
-              {pages.map(({ text, to }) => <Nav.Link key={to} to={to}>{text}</Nav.Link>)}
+              {pages.map(({ text, to }, i) => (
+                <Nav.Link
+                  key={to}
+                  to={to}
+                  onClick={() => setCurrentButton(i)}
+                  style={{
+                    color: currentButton === i ? 'white' : 'white',
+                    boxShadow: currentButton === i ? 'inset 0 -2px 0 white' : 'none',
+                  }}
+                >
+                  {text}
+                </Nav.Link>
+              ))}
             </Box>
             <Box sx={{ display: 'flex' }}>
               <IconButton
@@ -122,6 +136,7 @@ const Navbar = () => {
                   sx={{
                     color: 'white',
                     fontSize: 14,
+                    letterSpacing: 1,
                   }}
                 >
                   Naujas vartotojas

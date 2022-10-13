@@ -34,15 +34,16 @@ const HomeCards = () => (
           flexDirection: 'column',
           alignItems: 'center',
           px: 3,
+          pt: 2,
         }}
         >
-          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>RAMYBĖ</Typography>
+          <Typography sx={{ fontSize: 16, fontFamily: 'Montserrat' }}>RAMYBĖ</Typography>
           <SelfImprovementIcon sx={{
-            fontSize: 46,
+            fontSize: 44,
             color: '#142223;',
           }}
           />
-          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }} textAlign="center">
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }} textAlign="center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             labore, ut autem ullam, deleniti explicabo eos!
           </Typography>
@@ -55,13 +56,13 @@ const HomeCards = () => (
           pt: 2,
         }}
         >
-          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>POILSIS</Typography>
+          <Typography sx={{ fontSize: 16, fontFamily: 'Montserrat' }}>POILSIS</Typography>
           <SpaIcon sx={{
             fontSize: 46,
             color: '#142223;',
           }}
           />
-          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }} textAlign="center">
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }} textAlign="center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             labore, ut autem ullam, deleniti explicabo eos!
           </Typography>
@@ -74,14 +75,14 @@ const HomeCards = () => (
           pt: 2,
         }}
         >
-          <Typography sx={{ fontSize: 12, fontFamily: 'Montserrat' }}>PABĖGIMAS</Typography>
+          <Typography sx={{ fontSize: 16, fontFamily: 'Montserrat' }}>PABĖGIMAS</Typography>
           <PsychologyIcon sx={{
             fontSize: 46,
             color: '#142223;',
           }}
           />
           <Typography
-            sx={{ fontSize: 12, fontFamily: 'Montserrat' }}
+            sx={{ fontSize: 14, fontFamily: 'Montserrat' }}
             textAlign="center"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.

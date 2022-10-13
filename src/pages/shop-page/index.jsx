@@ -29,80 +29,85 @@ const ShopPage = () => {
   }, [handleFetchItems]);
 
   return (
-    <Container maxWidth="false" sx={{ maxWidth: 1400 }}>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-        pb: 4,
-      }}
-      >
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{
-            fontSize: '1rem',
-            py: 3,
-            fontFamily: 'Montserrat',
-          }}
+    <Box sx={{
+      backgroundColor: 'common.light',
+    }}
+    >
+      <Container maxWidth="false" sx={{ maxWidth: 1400 }}>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          textAlign: 'center',
+          pb: 4,
+        }}
         >
-          NAMELIAI NUOMAI
-        </Typography>
-        <Typography
-          variant="h5"
-          component="h3"
-          sx={{
-            fontSize: '0.9rem',
-            py: 3,
-            fontFamily: 'Montserrat',
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Voluptatem voluptate, accusamus
-        </Typography>
-
-        <Filters drawerWidth={drawerWidth} />
-
-        {houses.length > 0 ? (
-          <Grid container spacing={4}>
-            {houses.map(({
-              id,
-              title,
-              description,
-              category,
-              images,
-              price,
-              currency,
-            }) => (
-              <Grid key={id} item xs={12} sm={6} md={4} lg={3} xl={3}>
-                <ItemCard
-                  id={id}
-                  title={title}
-                  description={description}
-                  category={category}
-                  images={images}
-                  price={price}
-                  currency={currency}
-                  updateItem={handleUpdateItems}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        ) : (
           <Typography
-            variant="h3"
+            variant="h5"
+            component="h2"
             sx={{
-              width: '100%',
-              textAlign: 'center',
-              color: 'error.main',
+              fontSize: '1rem',
+              py: 3,
               fontFamily: 'Montserrat',
             }}
           >
-            Nėra duomenų
+            NAMELIAI NUOMAI
           </Typography>
-        )}
-      </Box>
-    </Container>
+          <Typography
+            variant="h5"
+            component="h3"
+            sx={{
+              fontSize: '0.9rem',
+              py: 3,
+              fontFamily: 'Montserrat',
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatem voluptate, accusamus
+          </Typography>
+
+          <Filters drawerWidth={drawerWidth} />
+
+          {houses.length > 0 ? (
+            <Grid container spacing={4}>
+              {houses.map(({
+                id,
+                title,
+                description,
+                category,
+                images,
+                price,
+                currency,
+              }) => (
+                <Grid key={id} item xs={12} sm={6} md={4} lg={3} xl={3}>
+                  <ItemCard
+                    id={id}
+                    title={title}
+                    description={description}
+                    category={category}
+                    images={images}
+                    price={price}
+                    currency={currency}
+                    updateItem={handleUpdateItems}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          ) : (
+            <Typography
+              variant="h3"
+              sx={{
+                width: '100%',
+                textAlign: 'center',
+                color: 'error.main',
+                fontFamily: 'Montserrat',
+              }}
+            >
+              Nėra duomenų
+            </Typography>
+          )}
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

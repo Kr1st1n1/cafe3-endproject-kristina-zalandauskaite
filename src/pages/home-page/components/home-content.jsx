@@ -14,7 +14,10 @@ const HomeContent = () => (
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: 600,
+    height: '62vh',
+    backgroundColor: { lg: 'common.light' },
+    opacity: 0.99,
+    boxShadow: { xs: 'inset 120em 1em #0a0808c9', lg: 'none' },
   }}
   >
     <Container
@@ -33,7 +36,7 @@ const HomeContent = () => (
               letterSpacing: '0.08em',
               color: { xs: 'common.light', lg: 'black' },
               textAlign: 'center',
-              fontSize: { xs: '1rem' },
+              fontSize: '18px',
               fontWeight: '700',
               pt: { xs: 5 },
               fontFamily: 'Montserrat',
@@ -46,7 +49,7 @@ const HomeContent = () => (
             variant="h6"
             sx={() => ({
               color: { xs: 'common.light', lg: 'black' },
-              fontSize: { xs: '0.8rem', md: '1rem', xxl: '0.8rem' },
+              fontSize: '14px',
               textAlign: 'center',
               pt: 3,
               px: {
@@ -99,7 +102,7 @@ const HomeContent = () => (
               width: { sm: '37%', xs: '43%' },
               position: 'absolute',
               top: {
-                xxl: 81, xl: 81, lg: 143, xs: 84,
+                xxl: 71, xl: 71, lg: 143, xs: 84,
               },
               left: {
                 xxl: 20, xl: 20, lg: 20, xs: 35,
@@ -114,7 +117,7 @@ const HomeContent = () => (
               position: 'absolute',
               width: { sm: '37%', xs: '44%' },
               top: {
-                xxl: 150, xl: 150, lg: 194, xs: 234,
+                xxl: 140, xl: 140, lg: 194, xs: 234,
               },
               left: {
                 xxl: 280, xl: 280, lg: 205, xs: 165,
@@ -129,7 +132,7 @@ const HomeContent = () => (
               position: 'absolute',
               width: { sm: '37%', xs: '45%' },
               top: {
-                xxl: 300, xl: 300, lg: 300, xs: 362,
+                xxl: 290, xl: 290, lg: 300, xs: 362,
               },
               left: { lg: 118, xs: 30 },
               zIndex: 3,

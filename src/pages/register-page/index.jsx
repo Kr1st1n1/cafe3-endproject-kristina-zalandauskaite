@@ -1,10 +1,11 @@
 import React from 'react';
-import { TextField } from '@mui/material';
+import { TextField, Box, Container } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import * as yup from 'yup';
 import moment from 'moment';
 import { useFormik } from 'formik';
 import AuthForm from '../../components/auth-form';
+import BgImage from '../../assets/flowers.jpg';
 
 const dateNow = moment(new Date());
 
@@ -58,98 +59,116 @@ const RegisterPage = () => {
   });
 
   return (
-    <AuthForm
-      title="Registracija"
-      btnText="Registruotis"
-      onSubmit={handleSubmit}
-      disabled={!dirty || !isValid}
+    <Box sx={{
+      backgroundImage: `url(${BgImage})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'cover',
+      minHeight: '100vh',
+      width: '100%',
+      opacity: 0.99,
+      boxShadow: 'inset 120em 1em #211c1cbf',
+    }}
     >
-      <TextField
-        name="email"
-        label="E-paštas"
-        type="email"
-        variant="filled"
-        fullWidth
-        value={values.email}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={touched.email && Boolean(errors.email)}
-        helperText={touched.email && errors.email}
-      />
-      <TextField
-        name="emailConfirmation"
-        label="E-pašto patvirtinimas"
-        type="email"
-        variant="filled"
-        fullWidth
-        value={values.emailConfirmation}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={touched.emailConfirmation && Boolean(errors.emailConfirmation)}
-        helperText={touched.emailConfirmation && errors.emailConfirmation}
-      />
-      <TextField
-        name="password"
-        label="Slaptažodis"
-        type="password"
-        variant="filled"
-        fullWidth
-        onChange={handleChange}
-        value={values.password}
-        onBlur={handleBlur}
-        error={touched.password && Boolean(errors.password)}
-        helperText={touched.password && errors.password}
-      />
-      <TextField
-        name="passwordConfirmation"
-        label="Slaptažodžio patvirtinimas"
-        type="password"
-        variant="filled"
-        fullWidth
-        value={values.passwordConfirmation}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={touched.passwordConfirmation && Boolean(errors.passwordConfirmation)}
-        helperText={touched.passwordConfirmation && errors.passwordConfirmation}
-      />
-      <TextField
-        name="fullname"
-        label="Pilnas vardas"
-        type="text"
-        variant="filled"
-        fullWidth
-        value={values.fullname}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={touched.fullname && Boolean(errors.fullname)}
-        helperText={touched.fullname && errors.fullname}
-      />
-      <DesktopDatePicker
-        inputFormat="yyyy-MM-DD"
-        disableMaskedInput
-        value={values.birthdate}
-        disableFuture
-        onChange={(momentInstance) => {
-          if (momentInstance.isValid) {
-            setFieldTouched('birthdate', true, false);
-            setFieldValue('birthdate', momentInstance, true);
-          }
-        }}
-        renderInput={(params) => (
-          <TextField
+      <Container
+        maxWidth="false"
+        sx={{ maxWidth: 1400 }}
+      >
+        <Box height="90vh" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <AuthForm
+            title="Registracija"
+            btnText="Registruotis"
+            onSubmit={handleSubmit}
+            disabled={!dirty || !isValid}
+          >
+            <TextField
+              name="email"
+              label="E-paštas"
+              type="email"
+              variant="filled"
+              fullWidth
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.email && Boolean(errors.email)}
+              helperText={touched.email && errors.email}
+            />
+            <TextField
+              name="emailConfirmation"
+              label="E-pašto patvirtinimas"
+              type="email"
+              variant="filled"
+              fullWidth
+              value={values.emailConfirmation}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.emailConfirmation && Boolean(errors.emailConfirmation)}
+              helperText={touched.emailConfirmation && errors.emailConfirmation}
+            />
+            <TextField
+              name="password"
+              label="Slaptažodis"
+              type="password"
+              variant="filled"
+              fullWidth
+              onChange={handleChange}
+              value={values.password}
+              onBlur={handleBlur}
+              error={touched.password && Boolean(errors.password)}
+              helperText={touched.password && errors.password}
+            />
+            <TextField
+              name="passwordConfirmation"
+              label="Slaptažodžio patvirtinimas"
+              type="password"
+              variant="filled"
+              fullWidth
+              value={values.passwordConfirmation}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.passwordConfirmation && Boolean(errors.passwordConfirmation)}
+              helperText={touched.passwordConfirmation && errors.passwordConfirmation}
+            />
+            <TextField
+              name="fullname"
+              label="Pilnas vardas"
+              type="text"
+              variant="filled"
+              fullWidth
+              value={values.fullname}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.fullname && Boolean(errors.fullname)}
+              helperText={touched.fullname && errors.fullname}
+            />
+            <DesktopDatePicker
+              inputFormat="yyyy-MM-DD"
+              disableMaskedInput
+              value={values.birthdate}
+              disableFuture
+              onChange={(momentInstance) => {
+                if (momentInstance.isValid) {
+                  setFieldTouched('birthdate', true, false);
+                  setFieldValue('birthdate', momentInstance, true);
+                }
+              }}
+              renderInput={(params) => (
+                <TextField
             // eslint-disable-next-line react/jsx-props-no-spreading
-            {...params}
-            name="birthdate"
-            label="gimimo diena"
-            variant="filled"
-            fullWidth
-            onBlur={handleBlur}
-            error={touched.birthdate && Boolean(errors.birthdate)}
-            helperText={touched.birthdate && errors.birthdate}
-          />
-        )}
-      />
-    </AuthForm>
+                  {...params}
+                  name="birthdate"
+                  label="gimimo diena"
+                  variant="filled"
+                  fullWidth
+                  onBlur={handleBlur}
+                  error={touched.birthdate && Boolean(errors.birthdate)}
+                  helperText={touched.birthdate && errors.birthdate}
+                />
+              )}
+            />
+          </AuthForm>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

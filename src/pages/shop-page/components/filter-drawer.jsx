@@ -33,7 +33,7 @@ const FilterDrawer = ({ children }) => {
         open={drawer}
         onClose={() => setDrawer(false)}
       >
-        <Box>
+        <Box sx={{ height: 200, pt: 7 }}>
           {children}
         </Box>
       </Drawer>

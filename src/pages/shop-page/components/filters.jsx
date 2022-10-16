@@ -8,8 +8,8 @@ import {
   Container,
 } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
+import AutoSelectField from '../../../components/auto-select-field';
 import CategoryService from '../../../services/category-service';
-import CheckboxGroup from '../../../components/checkbox-group';
 import FilterDrawer from './filter-drawer';
 
 const MIN = 0;
@@ -22,7 +22,7 @@ const Filters = ({ drawerWidth }) => {
   const [categories, setCategories] = React.useState([]);
 
   const [priceRange, setPriceRange] = React.useState([MIN, MAX]);
-  const [selectedCategory, setSelctedCategory] = React.useState([]);
+  const [category, setCategory] = React.useState(null);
 
   const handlePriceRangeChange = (_, [min, max]) => {
     if (min === MIN) {
@@ -40,12 +40,14 @@ const Filters = ({ drawerWidth }) => {
   };
 
   const handleCategoryChange = (_, newCategory) => {
-    const ids = newCategory.map((category) => category.id);
-    searchParams.delete('categoryId');
-    ids.forEach((id) => searchParams.append('categoryId', id));
+    if (newCategory) {
+      searchParams.set('categoryId', newCategory.id);
+    } else {
+      searchParams.delete('categoryId');
+    }
 
     setSearchParams(searchParams);
-    setSelctedCategory(newCategory);
+    setCategory(newCategory);
   };
 
   const deleteFilters = () => {
@@ -71,7 +73,7 @@ const Filters = ({ drawerWidth }) => {
         .getAll('categoryId')
         .map((id) => fetchedCategories.find((material) => material.id === id))
         .filter((material) => material !== undefined);
-      setSelctedCategory(selectedCategoryInit);
+      setCategory(selectedCategoryInit);
 
       setCategories(fetchedCategories);
 
@@ -111,11 +113,11 @@ const Filters = ({ drawerWidth }) => {
               </Box>
             </FormControl>
           </Box>
-          <CheckboxGroup
-            label="Filtruoti pagal miestą"
+          <AutoSelectField
             options={categories}
-            value={selectedCategory}
+            value={category}
             onChange={handleCategoryChange}
+            getOptionLabel={({ title }) => title}
           />
           <Button
             variant="contained"

@@ -94,7 +94,7 @@ const List = () => {
               count={count}
               setCount={(newCount) => addToCart({ id, count: newCount })}
               price={price}
-              category={[category.title]}
+              textProps={[category.title]}
               deleteItem={() => deleteItem(id)}
             />
           ))}

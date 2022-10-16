@@ -1,6 +1,6 @@
 const domain = process.env.REACT_APP_SERVER_ADDRESS;
-const collectionName = 'houses';
-const relationsParams = '_expand=category';
+const collectionName = 'api/houses';
+const relationsParams = 'joinBy=categoryId';
 
 const fetchAll = async (paramsString = null) => {
   const urlParamsString = paramsString ? `&${paramsString}` : '';

@@ -20,6 +20,7 @@ module.exports = {
     ],
     "rules": {
         "react/prop-types": [0],
+        "react/jsx-props-no-spreading": [0],
         "newline-before-return": [1],
         "import/prefer-default-export": [0],
         "react/function-component-definition": [1, {

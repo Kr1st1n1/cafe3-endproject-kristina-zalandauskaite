@@ -76,7 +76,6 @@ const ShopPage = () => {
                 category,
                 images,
                 price,
-                currency,
               }) => (
                 <Grid key={id} item xs={12} sm={6} md={4} lg={3} xl={3}>
                   <ItemCard
@@ -86,7 +85,6 @@ const ShopPage = () => {
                     category={category}
                     images={images}
                     price={price}
-                    currency={currency}
                     updateItem={handleUpdateItems}
                   />
                 </Grid>

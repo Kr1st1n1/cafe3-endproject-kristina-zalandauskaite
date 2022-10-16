@@ -11,7 +11,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 199.99,
-			"currency": "€",
 			"bathtubId": "2"
 		},
 		{
@@ -25,7 +24,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 399.99,
-			"currency": "€",
 			"bathtubId": "1"
 		},
 		{
@@ -39,7 +37,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 89.99,
-			"currency": "€",
 			"bathtubId": "2"
 		},
 		{
@@ -53,7 +50,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 249.99,
-			"currency": "€",
 			"bathtubId": "2"
 		},
 		{
@@ -67,7 +63,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 99.99,
-			"currency": "€",
 			"bathtubId": "2"
 		},
 		{
@@ -81,7 +76,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 199.99,
-			"currency": "€",
 			"bathtubId": "1"
 		},
 		{
@@ -95,7 +89,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 199.99,
-			"currency": "€",
 			"bathtubId": "2"
 		},
 		{
@@ -109,7 +102,6 @@
 				"/cabintwo.jpg"
 			],
 			"price": 99.99,
-			"currency": "€",
 			"bathtubId": "2"
 		}
 	],

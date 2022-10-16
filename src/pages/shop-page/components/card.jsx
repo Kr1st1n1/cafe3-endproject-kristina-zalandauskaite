@@ -20,7 +20,6 @@ const ItemCard = ({
   images,
   description,
   price,
-  currency,
 }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = React.useState(false);
@@ -108,7 +107,7 @@ const ItemCard = ({
                 fontSize: '14px',
               }}
             >
-              {`${price} ${currency}`}
+              {`${price} $`}
             </Typography>
           </Box>
           <Typography

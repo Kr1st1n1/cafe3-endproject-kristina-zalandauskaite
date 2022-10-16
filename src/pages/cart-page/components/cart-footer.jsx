@@ -38,7 +38,7 @@ const Footer = ({ totalPrice }) => (
         }}
         variant="h6"
       >
-        {totalPrice.toFixed(2)}
+        {`${totalPrice.toFixed(2)} $`}
 
       </Typography>
     </Box>

@@ -95,9 +95,9 @@ const Item = ({
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        { price.toFixed(2)}
+        { `${price.toFixed(2)} $`}
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>{(price * count).toFixed(2)}</Box>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>{`${(price * count).toFixed(2)} $`}</Box>
 
     </Box>
     <IconButton

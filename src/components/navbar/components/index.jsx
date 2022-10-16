@@ -45,10 +45,6 @@ export const Link = styled(NavLink, {
       ...commonStyles,
       color: grey[200],
 
-      // '&.active': {
-      // boxShadow: `inset 0 -2px 0 ${common.white}`,
-      // },
-
       ':hover': {
         backgroundColor: theme.palette.primary.dark,
         color: theme.palette.common.white,

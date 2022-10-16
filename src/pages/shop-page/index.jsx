@@ -6,7 +6,7 @@ import {
   Box,
 } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
-import CardService from '../../services/card-service';
+import HouseService from '../../services/house-service';
 import { ItemCard, Filters } from './components';
 
 const drawerWidth = 300;
@@ -16,7 +16,7 @@ const ShopPage = () => {
   const [searchParams] = useSearchParams();
 
   const handleFetchItems = React.useCallback(async () => {
-    const fetchedItems = await CardService.fetchAll(searchParams.toString());
+    const fetchedItems = await HouseService.fetchAll(searchParams.toString());
     setHouses(fetchedItems);
   }, [searchParams]);
 

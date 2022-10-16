@@ -39,7 +39,7 @@ const CommerceSection = ({ house }) => {
         </Box>
         <Box>
           <Typography variant="h6" sx={{ mb: 1 }}>Viso:</Typography>
-          <Typography variant="h6" sx={{ mb: 1 }}>{`${count * house.price}${house.currency}`}</Typography>
+          <Typography variant="h6" sx={{ mb: 1 }}>{`${count * house.price}$`}</Typography>
         </Box>
       </Box>
     </Box>

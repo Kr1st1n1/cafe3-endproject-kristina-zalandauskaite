@@ -18,11 +18,11 @@ const InfoSection = ({ house }) => (
     </Rectangle>
     <Box>
       <Typography variant="h4" sx={{ mb: 1, fontFamily: 'Montserrat' }}>{house.title}</Typography>
-      <Typography variant="h5" color="primary" sx={{ mb: 2, fontFamily: 'Montserrat' }}>{`${house.price}${house.currency}`}</Typography>
+      <Typography variant="h5" color="primary" sx={{ mb: 2, fontFamily: 'Montserrat' }}>{`${house.price}$`}</Typography>
       <Typography variant="body1" sx={{ fontFamily: 'Montserrat' }}>{house.description}</Typography>
       <List>
         {[
-          { text: house.category.label, Icon: CategoryIcon },
+          { text: house.category.title, Icon: CategoryIcon },
         ].map(({ text, Icon }) => (
           <ListItem key={text}>
             <ListItemIcon><Icon /></ListItemIcon>

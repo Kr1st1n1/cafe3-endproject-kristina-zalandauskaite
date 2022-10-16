@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 import CategoryService from '../../../services/category-service';
-import BathtubService from '../../../services/bathtub-service';
 import CheckboxGroup from '../../../components/checkbox-group';
 import FilterDrawer from './filter-drawer';
 
@@ -21,11 +20,9 @@ const Filters = ({ drawerWidth }) => {
   const [initialSetupDone, setIntialSetupDone] = React.useState(false);
 
   const [categories, setCategories] = React.useState([]);
-  const [bathtub, setBathtub] = React.useState([]);
 
   const [priceRange, setPriceRange] = React.useState([MIN, MAX]);
   const [selectedCategory, setSelctedCategory] = React.useState([]);
-  const [selectedBathtub, setSelectedBathtub] = React.useState([]);
 
   const handlePriceRangeChange = (_, [min, max]) => {
     if (min === MIN) {
@@ -51,15 +48,6 @@ const Filters = ({ drawerWidth }) => {
     setSelctedCategory(newCategory);
   };
 
-  const handleBathtubChanges = (_, newBathtub) => {
-    const ids = newBathtub.map((bathtubs) => bathtubs.id);
-    searchParams.delete('bathtubId');
-    ids.forEach((id) => searchParams.append('bathtubId', id));
-
-    setSearchParams(searchParams);
-    setSelectedBathtub(newBathtub);
-  };
-
   const deleteFilters = () => {
     searchParams.delete('price_gte');
     searchParams.delete('price_lte');
@@ -71,9 +59,8 @@ const Filters = ({ drawerWidth }) => {
 
   React.useEffect(() => {
     (async () => {
-      const [fetchedCategories, fetchedBathtub] = await Promise.all([
+      const [fetchedCategories] = await Promise.all([
         CategoryService.fetchAll(),
-        BathtubService.fetchAll(),
       ]);
 
       const priceMinInit = searchParams.get('price_gte') ?? MIN;
@@ -86,14 +73,7 @@ const Filters = ({ drawerWidth }) => {
         .filter((material) => material !== undefined);
       setSelctedCategory(selectedCategoryInit);
 
-      const selectedBathtubInit = searchParams
-        .getAll('bathtubId')
-        .map((id) => fetchedCategories.find((type) => type.id === id))
-        .filter((type) => type !== undefined);
-      setSelectedBathtub(selectedBathtubInit);
-
       setCategories(fetchedCategories);
-      setBathtub(fetchedBathtub);
 
       setIntialSetupDone(true);
     })();
@@ -136,12 +116,6 @@ const Filters = ({ drawerWidth }) => {
             options={categories}
             value={selectedCategory}
             onChange={handleCategoryChange}
-          />
-          <CheckboxGroup
-            label="Kubilas"
-            options={bathtub}
-            value={selectedBathtub}
-            onChange={handleBathtubChanges}
           />
           <Button
             variant="contained"

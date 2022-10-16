@@ -9,12 +9,12 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
 import Item from './item';
 import Footer from './cart-footer';
-import CardService from '../../../services/card-service';
+import HouseService from '../../../services/house-service';
 import useCart from '../../../hooks/useCart';
 
 const getFormattedItems = async (cartItemsData) => {
   const idArr = cartItemsData.map((cartItem) => cartItem.id);
-  const fetchedCartItems = await CardService.fetchByIdArr(idArr);
+  const fetchedCartItems = await HouseService.fetchByIdArr(idArr);
   const fetchedItemsWithCount = fetchedCartItems.map((fetchedItem) => ({
     ...fetchedItem,
     count: cartItemsData.find((cartItem) => cartItem.id === fetchedItem.id)?.count ?? 0,
@@ -94,7 +94,7 @@ const List = () => {
               count={count}
               setCount={(newCount) => addToCart({ id, count: newCount })}
               price={price}
-              category={[category.label]}
+              category={[category.title]}
               deleteItem={() => deleteItem(id)}
             />
           ))}

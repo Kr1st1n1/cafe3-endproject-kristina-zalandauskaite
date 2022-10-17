@@ -8,6 +8,7 @@ import {
   Divider,
   List,
   Container,
+  Typography,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -15,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import * as Nav from './components';
 import useCart from '../../hooks/useCart';
+import useAuth from '../../hooks/useAuth';
 
 const pages = [
   { text: 'Pagrindinis', to: '/' },
@@ -25,6 +27,7 @@ const pages = [
 const drawerWidth = 240;
 
 const Navbar = () => {
+  const { loggedIn } = useAuth();
   const { cartItemsCount } = useCart();
   const navigate = useNavigate();
 
@@ -122,27 +125,30 @@ const Navbar = () => {
                   <ShoppingCartIcon sx={{ fontSize: '22px' }} />
                 </Badge>
               </IconButton>
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <Nav.Link to="/auth/login">
-                  <PersonOutlineIcon sx={{
-                    color: 'white',
-                    fontSize: 24,
-                  }}
-                  />
-
-                </Nav.Link>
-                <Nav.Link
-                  to="/auth/register"
-                  sx={{
-                    color: 'white',
-                    fontSize: 14,
-                    letterSpacing: 1,
-                  }}
-                >
-                  Naujas vartotojas
-
-                </Nav.Link>
-              </Box>
+              {loggedIn ? (
+                <Typography>TEST PRISIJUNGĘS</Typography>
+              ) : (
+                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <Nav.Link to="/auth/login">
+                    <PersonOutlineIcon
+                      sx={{
+                        color: 'white',
+                        fontSize: 24,
+                      }}
+                    />
+                  </Nav.Link>
+                  <Nav.Link
+                    to="/auth/register"
+                    sx={{
+                      color: 'white',
+                      fontSize: 14,
+                      letterSpacing: 1,
+                    }}
+                  >
+                    Naujas vartotojas
+                  </Nav.Link>
+                </Box>
+              )}
             </Box>
           </Box>
         </Container>

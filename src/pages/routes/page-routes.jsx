@@ -13,6 +13,8 @@ import CartPage from '../cart-page';
 import HousePage from '../house-page';
 import OrderPage from '../order-page';
 
+import RequireVisitor from './require-visitor';
+
 const PageRoutes = () => (
   <Routes>
     <Route path="/" element={<MainLayout />}>
@@ -23,9 +25,9 @@ const PageRoutes = () => (
       <Route path="/order" element={<OrderPage />} />
       <Route path="house/:houseId" element={<HousePage />} />
 
-      <Route path="auth/" element={<AuthLayout />}>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+      <Route path="auth/" element={<RequireVisitor><AuthLayout /></RequireVisitor>}>
+        <Route path="login" element={<RequireVisitor><LoginPage /></RequireVisitor>} />
+        <Route path="register" element={<RequireVisitor><RegisterPage /></RequireVisitor>} />
       </Route>
 
       <Route path="*" element={<ErrorPage />} />

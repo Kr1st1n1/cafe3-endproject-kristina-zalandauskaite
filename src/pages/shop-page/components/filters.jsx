@@ -10,10 +10,8 @@ import {
 import { useSearchParams } from 'react-router-dom';
 import AutoSelectField from '../../../components/auto-select-field';
 import CategoryService from '../../../services/category-service';
+import HouseService from '../../../services/house-service';
 import FilterDrawer from './filter-drawer';
-
-const MIN = 0;
-const MAX = 400;
 
 const Filters = ({ drawerWidth }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,16 +19,18 @@ const Filters = ({ drawerWidth }) => {
 
   const [categories, setCategories] = React.useState([]);
 
-  const [priceRange, setPriceRange] = React.useState([MIN, MAX]);
+  const [priceBounds, setPriceBounds] = React.useState([0, 0]);
+  const [priceRange, setPriceRange] = React.useState([0, 0]);
   const [category, setCategory] = React.useState(null);
+  const [priceLowerBound, priceHigherBound] = priceBounds;
 
   const handlePriceRangeChange = (_, [min, max]) => {
-    if (min === MIN) {
+    if (min === priceLowerBound) {
       searchParams.delete('price_gte');
     } else {
       searchParams.set('price_gte', min);
     }
-    if (max === MAX) {
+    if (max === priceHigherBound) {
       searchParams.delete('price_lte');
     } else {
       searchParams.set('price_lte', max);
@@ -61,12 +61,13 @@ const Filters = ({ drawerWidth }) => {
 
   React.useEffect(() => {
     (async () => {
-      const [fetchedCategories] = await Promise.all([
+      const [fetchedCategories, fetchedPriceRange] = await Promise.all([
         CategoryService.fetchAll(),
+        HouseService.getPriceRange(),
       ]);
 
-      const priceMinInit = searchParams.get('price_gte') ?? MIN;
-      const priceMaxInit = searchParams.get('price_lte') ?? MAX;
+      const priceMinInit = searchParams.get('price_gte') ?? fetchedPriceRange[0];
+      const priceMaxInit = searchParams.get('price_lte') ?? fetchedPriceRange[1];
       setPriceRange([priceMinInit, priceMaxInit]);
 
       const selectedCategoryInit = searchParams
@@ -76,6 +77,7 @@ const Filters = ({ drawerWidth }) => {
       setCategory(selectedCategoryInit);
 
       setCategories(fetchedCategories);
+      setPriceBounds(fetchedPriceRange);
 
       setIntialSetupDone(true);
     })();
@@ -107,8 +109,8 @@ const Filters = ({ drawerWidth }) => {
                   value={priceRange}
                   onChange={(_, newPriceRange) => setPriceRange(newPriceRange)}
                   onChangeCommitted={handlePriceRangeChange}
-                  min={MIN}
-                  max={MAX}
+                  min={priceLowerBound}
+                  max={priceHigherBound}
                 />
               </Box>
             </FormControl>

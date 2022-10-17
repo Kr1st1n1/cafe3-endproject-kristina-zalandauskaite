@@ -19,6 +19,12 @@ const baseTheme = createTheme({
   zIndex: {
     appBar: 1300,
   },
+
+  transitions: {
+    duration: {
+      loadingScreen: 800,
+    },
+  },
 });
 
 const mixinTheme = createTheme(baseTheme, {

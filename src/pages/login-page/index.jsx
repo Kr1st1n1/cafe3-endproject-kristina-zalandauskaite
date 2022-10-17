@@ -1,8 +1,16 @@
 import React from 'react';
-import { TextField, Box, Container } from '@mui/material';
+import {
+  TextField, Box, Container, Alert,
+} from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { useSearchParams } from 'react-router-dom';
+import {
+  authClearErrorsAction,
+  createLoginThunkAction,
+} from '../../store/auth/auth-actions';
 import AuthForm from '../../components/auth-form';
+import useAuth from '../../hooks/useAuth';
 import BgImage from '../../assets/flowers.jpg';
 
 const initialValues = {
@@ -14,28 +22,26 @@ const validationSchema = yup.object({
   email: yup.string()
     .required('Privaloma')
     .email('Neteisingas el. pašto formatas'),
-  password: yup.string()
-    .required('Privaloma')
-    .min(8, 'Mažiausiai 8 simboliai')
-    .matches(/[a-z]/, 'Bent viena mažoji raidė')
-    .matches(/[A-Z]/, 'Bent viena didžioji raidė')
-    .matches(/\d/, 'Bent vienas skaičius')
-    .matches(/\W/, 'Bent vienas specialus simbolis'),
 });
 
 const LoginPage = () => {
-  const onSubmit = async (values) => {
-    console.log('Forma patvirtinta, atliekami veiksmai...');
-    console.log(values);
-  };
+  const { error, dispatch } = useAuth();
+  const [serachParams] = useSearchParams();
+
+  const onSubmitRef = React.useRef((credentials) => {
+    const redirect = serachParams.get('redirect');
+    dispatch(createLoginThunkAction(credentials, redirect));
+    // eslint-disable-next-line no-use-before-define
+    resetForm();
+  });
 
   const {
     dirty, values, errors, touched, isValid,
-    handleChange, handleBlur, handleSubmit,
+    handleChange, handleBlur, handleSubmit, resetForm,
   } = useFormik({
     initialValues,
     validationSchema,
-    onSubmit,
+    onSubmit: onSubmitRef.current,
   });
 
   return (
@@ -53,7 +59,17 @@ const LoginPage = () => {
         maxWidth="false"
         sx={{ maxWidth: 1400 }}
       >
-        <Box height="90vh" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Box
+          height="90vh"
+          sx={{
+            display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',
+          }}
+        >
+          {error && (
+          <Alert sx={{ mb: 5 }} severity="error" onClose={() => dispatch(authClearErrorsAction)}>
+            {error}
+          </Alert>
+          )}
           <AuthForm
             title="Prisijungti"
             onSubmit={handleSubmit}

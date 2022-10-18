@@ -5,10 +5,7 @@ import {
   IconButton,
   Drawer,
   Badge,
-  Divider,
-  List,
   Container,
-  Typography,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -17,6 +14,8 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import * as Nav from './components';
 import useCart from '../../hooks/useCart';
 import useAuth from '../../hooks/useAuth';
+import DrawerSection from './components/drawer';
+import LogedIn from './components/logedin';
 
 const pages = [
   { text: 'Pagrindinis', to: '/' },
@@ -37,40 +36,6 @@ const Navbar = () => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <IconButton
-        sx={{
-          mx: 4,
-          px: 2,
-        }}
-        size="large"
-        edge="end"
-        color="inherit"
-        onClick={() => navigate('/cart')}
-      >
-        <ShoppingCartIcon sx={{
-          color: 'white',
-          fontSize: 14,
-        }}
-        />
-      </IconButton>
-      <Divider />
-      <List sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 3,
-      }}
-      >
-        {pages.map(({ text, to }) => <Nav.Link key={to} to={to} contracted>{text}</Nav.Link>)}
-        <Nav.Link to="/auth/login" contracted>
-          <PersonOutlineIcon />
-        </Nav.Link>
-        <Nav.Link to="/auth/register" contracted>REGISTER</Nav.Link>
-      </List>
-    </Box>
-  );
 
   return (
     <Box>
@@ -126,7 +91,7 @@ const Navbar = () => {
                 </Badge>
               </IconButton>
               {loggedIn ? (
-                <Typography>TEST PRISIJUNGĘS</Typography>
+                <LogedIn />
               ) : (
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                   <Nav.Link to="/auth/login">
@@ -170,7 +135,7 @@ const Navbar = () => {
             },
           }}
         >
-          {drawer}
+          <DrawerSection />
         </Drawer>
       </Box>
     </Box>

@@ -6,16 +6,20 @@ import {
 import List from './components/list';
 
 const CartPage = () => (
-  <Box>
-    <Container maxWidth="false" sx={{ maxWidth: '1400px' }}>
+
+  <Box sx={{ backgroundColor: 'common.main', height: '100vh' }}>
+    <Container maxWidth="false" sx={{ maxWidth: '1400px', backgroundColor: 'common.dark' }}>
       <Box sx={{
-        p: 15,
+        pt: 3,
+        px: 30,
+        pb: 2,
       }}
       >
         <List />
       </Box>
     </Container>
   </Box>
+
 );
 
 export default CartPage;

@@ -12,8 +12,10 @@ import ErrorPage from '../error-page';
 import CartPage from '../cart-page';
 import HousePage from '../house-page';
 import OrderPage from '../order-page';
+import ProfilePage from '../profile-page';
 
 import RequireVisitor from './require-visitor';
+import RequireAuth from './require-auth';
 
 const PageRoutes = () => (
   <Routes>
@@ -24,6 +26,7 @@ const PageRoutes = () => (
       <Route path="/cart" element={<CartPage />} />
       <Route path="/order" element={<OrderPage />} />
       <Route path="house/:houseId" element={<HousePage />} />
+      <Route path="profile" element={<RequireAuth><ProfilePage /></RequireAuth>} />
 
       <Route path="auth/" element={<RequireVisitor><AuthLayout /></RequireVisitor>}>
         <Route path="login" element={<RequireVisitor><LoginPage /></RequireVisitor>} />

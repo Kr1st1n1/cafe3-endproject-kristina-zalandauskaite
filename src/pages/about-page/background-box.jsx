@@ -2,13 +2,13 @@ import * as React from 'react';
 import {
   Container, Box, Typography,
 } from '@mui/material';
-import BgImage from '../../assets/flowers.jpg';
+import BgImage from '../../assets/bg-about.jpg';
 
 const AboutPage = () => (
   <Box sx={{
     backgroundImage: `url(${BgImage})`,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'cover',
+    backgroundPosition: 'center',
     minHeight: '30vh',
     pt: '100px',
     width: '100%',

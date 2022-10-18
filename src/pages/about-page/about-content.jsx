@@ -3,7 +3,7 @@ import {
   Container, Box, Typography,
 } from '@mui/material';
 import Image from '../../components/image';
-import ImageAbout from '../../assets/aboutone.jpg';
+import ImageAbout from '../../assets/bg-about.jpg';
 import ImageAtgaiva from '../../assets/ramybe.jpg';
 
 const AboutContent = () => (

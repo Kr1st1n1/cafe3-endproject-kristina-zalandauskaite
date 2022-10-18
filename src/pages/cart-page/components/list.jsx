@@ -66,12 +66,10 @@ const List = () => {
           <KeyboardBackspaceIcon fontSize="large" />
           <Typography variant="h6" sx={{ color: 'black', fontWeight: 700 }}>Grįžti atgal</Typography>
         </Link>
-        <Divider sx={{ pt: 3, pb: 3 }} />
+        <Divider sx={{ pt: 3 }} />
         <Box sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          pt: 2,
-          pb: 2,
         }}
         >
 
@@ -99,7 +97,6 @@ const List = () => {
             />
           ))}
         </Box>
-
         <Footer totalPrice={total} />
       </Box>
     </Box>

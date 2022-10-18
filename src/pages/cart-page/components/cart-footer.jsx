@@ -12,7 +12,7 @@ const Footer = ({ totalPrice }) => (
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      mt: 5,
+      mt: 2,
     }}
   >
 
@@ -20,7 +20,7 @@ const Footer = ({ totalPrice }) => (
       display: 'flex',
       gap: 10,
       px: 16,
-      py: 8,
+      pb: 2,
     }}
     >
       <Typography
@@ -51,7 +51,7 @@ const Footer = ({ totalPrice }) => (
         maxHeight: 36,
       }}
       >
-        KITAS
+        APMOKĖTI
       </Button>
     </Link>
 

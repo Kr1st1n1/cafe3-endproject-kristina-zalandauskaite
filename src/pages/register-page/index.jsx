@@ -46,7 +46,7 @@ const validationSchema = yup.object({
 const RegisterPage = () => {
   const onSubmit = (values) => {
     console.log('įvestos reikšmės');
-    console.log(values);
+    console.table(values);
   };
 
   const {

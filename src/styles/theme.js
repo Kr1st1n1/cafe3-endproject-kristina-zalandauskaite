@@ -56,12 +56,13 @@ const lightTheme = createTheme(mixinTheme, {
 export const fontTheme = createTheme({
   typography: {
     fontFamily: [
+      'Open Sans',
+      'sans-serif',
       'Nunito',
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
       'Montserrat',
-      'sans-serif',
       'mase',
     ].join(','),
   },

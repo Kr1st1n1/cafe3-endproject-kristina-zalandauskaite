@@ -86,19 +86,26 @@ const Filters = ({ drawerWidth }) => {
 
   return (
     <FilterDrawer>
-      <Container maxWidth="false" sx={{ maxWidth: '1400px' }}>
+      <Container maxWidth="false" sx={{ maxWidth: '1300px' }}>
         {initialSetupDone && (
         <Box sx={{
-          display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
+          display: 'flex', flexDirection: { md: 'row', xs: 'column' }, justifyContent: { lg: 'space-between', xs: 'center' }, alignItems: { lg: 'flex-end', xs: 'center' }, minHeight: 100,
         }}
         >
-          <Typography variant="h5" sx={{ pt: 7, fontSize: '18px', fontWeight: '800' }}>FILTRAI</Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              pt: 7, fontSize: '18px', fontWeight: '600', fontFamily: 'Monserrat',
+            }}
+          >
+            FILTRAI
+          </Typography>
           <Box sx={{ width: drawerWidth }}>
             <FormControl sx={{ width: '100%' }}>
               <Typography
                 variant="h7"
                 sx={{
-                  display: 'flex', alignSelf: 'center', pt: 7, fontSize: '18px',
+                  display: 'flex', alignSelf: 'center', pt: 7, fontSize: '18px', fontFamily: 'Monserrat',
                 }}
               >
                 Kaina
@@ -128,11 +135,9 @@ const Filters = ({ drawerWidth }) => {
             sx={{
               minWidth: 180,
               display: 'flex',
-              alignSelf: 'center',
-              mt: 10,
             }}
           >
-            Pašalinti filtrus
+            <Typography sx={{ fontFamily: 'Monseratt', fontSize: 14 }}> Pašalinti filtrus</Typography>
           </Button>
         </Box>
         )}

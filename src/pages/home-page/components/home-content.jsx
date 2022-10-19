@@ -14,7 +14,7 @@ const HomeContent = () => (
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: '62vh',
+    height: { xs: '56vh', lg: '64vh' },
     backgroundColor: { lg: 'common.light' },
     opacity: 0.99,
     boxShadow: { xs: 'inset 120em 1em #0a0808c9', lg: 'none' },
@@ -38,7 +38,7 @@ const HomeContent = () => (
               textAlign: 'center',
               fontSize: '18px',
               fontWeight: '700',
-              pt: { xs: 5 },
+              pt: { xs: 5, lg: 0 },
               fontFamily: 'Montserrat',
             })}
           >
@@ -51,7 +51,9 @@ const HomeContent = () => (
               color: { xs: 'common.light', lg: 'black' },
               fontSize: '14px',
               textAlign: 'center',
-              pt: 3,
+              pt: {
+                xs: 3, md: 5, xl: 3, lg: 3,
+              },
               px: {
                 xs: 1, xl: 11, lg: 1,
               },
@@ -67,10 +69,10 @@ const HomeContent = () => (
           <Box sx={{
             display: 'flex',
             justifyContent: 'center',
-            flexDirection: 'column',
+            flexDirection: { xs: 'row', lg: 'column' },
             alignItems: 'center',
             gap: 3,
-            pt: 4,
+            pt: { xs: 7, md: 15, lg: 4 },
           }}
           >
             <Link to="/shop" style={{ textDecoration: 'none' }}>
@@ -132,7 +134,7 @@ const HomeContent = () => (
               position: 'absolute',
               width: { sm: '37%', xs: '45%' },
               top: {
-                xxl: 290, xl: 290, lg: 300, xs: 362,
+                xxl: 240, xl: 225, lg: 300, xs: 362,
               },
               left: { lg: 118, xs: 30 },
               zIndex: 3,

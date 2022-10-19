@@ -38,8 +38,9 @@ const Item = ({
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <Box sx={{
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'top',
         gap: 2,
+        pt: 5,
         width: 300,
       }}
       >
@@ -53,7 +54,7 @@ const Item = ({
         />
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <Typography variant="h7">{title}</Typography>
-          <Typography variant="h8">{category}</Typography>
+          <Typography variant="h7">{category}</Typography>
         </Box>
       </Box>
 
@@ -67,7 +68,7 @@ const Item = ({
         <Box sx={{ pb: 2, justifyContent: 'center', display: 'flex' }}>
           <Box sx={{
             textAlign: 'center',
-            height: '35vh',
+            height: '18vh',
             Flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
@@ -79,7 +80,14 @@ const Item = ({
             }}
             >
               <Box>
-                <Box>Įsiregistravimas</Box>
+                <Box sx={{
+                  fontSize: '16px',
+                  fontFamily: 'Montserrat',
+                }}
+                >
+                  Įsiregistravimas
+
+                </Box>
                 <DatePicker
                   selected={checkInDate}
                   minDate={new Date()}
@@ -87,7 +95,14 @@ const Item = ({
                 />
               </Box>
               <Box>
-                <Box>Išsiregistravimas</Box>
+                <Box sx={{
+                  fontSize: '16px',
+                  fontFamily: 'Montserrat',
+                }}
+                >
+                  Išsiregistravimas
+
+                </Box>
                 <DatePicker
                   selected={checkOutDate}
                   minDate={checkInDate}
@@ -107,7 +122,6 @@ const Item = ({
                 {moment(checkOutDate).format('LL')}
                 .
               </Typography>
-              {dayCount}
               .
             </Box>
             )}
@@ -124,9 +138,9 @@ const Item = ({
             size="small"
             inputProps={{
               style: {
-                padding: 0, width: 30, height: 30, minWidth: 0, textAlign: 'center',
+                padding: 0, width: 100, height: 30, minWidth: 0, textAlign: 'center',
               },
-              value: count * dayCount,
+              value: count * dayCount || 0,
             }}
             readOnly
             sx={{ borderRadius: 0, height: 30 }}
@@ -137,15 +151,20 @@ const Item = ({
           display: 'flex', alignItems: 'center', pb: 2, justifyContent: 'center',
         }}
         >
+          <Typography sx={{ pr: 2 }}> Vienos nakvynės kaina:</Typography>
           { `${price.toFixed(2)} $`}
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{`${(price * count * dayCount).toFixed(2)} $`}</Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Typography sx={{ pr: 2 }}> Rezervuoto laikotarpio kaina:</Typography>
+          {`${(price * dayCount * count || 0).toFixed(2)} $`}
+
+        </Box>
 
       </Box>
       <IconButton
         size="medium"
         sx={{
-          height: 30, display: 'flex', alignSelf: 'center',
+          height: 30, display: 'flex', alignSelf: 'top', pt: 6,
         }}
         onClick={deleteItem}
       >

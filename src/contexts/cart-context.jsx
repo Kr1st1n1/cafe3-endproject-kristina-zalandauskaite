@@ -11,6 +11,8 @@ export const CartProvider = ({ children }) => {
 
     cartItemsCount: cartItems.reduce((sum, { count }) => sum + count, 0),
 
+    totalCount: cartItems.reduce((prevSum, { count, price }) => prevSum + count * price, 0),
+
     addToCart: (item) => {
       if (cartItems.find((x) => x.id === item.id)) {
         setItems(cartItems.map((x) => (x.id === item.id ? { ...x, count: item.count } : x)));

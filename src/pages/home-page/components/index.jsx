@@ -23,6 +23,20 @@ export const ButtonLink = styled(Button)(({ theme }) => ({
   color: theme.palette.secondary.main,
   background: theme.palette.primary.main,
   fontFamily: 'Montserrat',
+  [theme.breakpoints.down('lg')]: {
+    background: theme.palette.common.light,
+    color: theme.palette.primary.main,
+    fontWeight: 500,
+  },
+}));
+
+export const IconContent = styled(Box)(({ theme }) => ({
+  gap: theme.spacing(6),
+  display: 'flex',
+  flexDirection: 'row',
+  [theme.breakpoints.down('lg')]: {
+    paddingBottom: 10,
+  },
 }));
 
 export const Footer = styled(Box)(({ theme }) => ({
@@ -32,12 +46,7 @@ export const Footer = styled(Box)(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.down('lg')]: {
     flexDirection: 'column',
-    padding: 15,
+    paddingTop: 30,
+    paddingBottom: 30,
   },
-}));
-
-export const IconContent = styled(Box)(({ theme }) => ({
-  gap: theme.spacing(5),
-  display: 'flex',
-  flexDirection: 'row',
 }));

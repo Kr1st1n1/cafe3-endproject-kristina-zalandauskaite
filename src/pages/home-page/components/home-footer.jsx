@@ -37,14 +37,14 @@ const HomeFooter = () => (
           />
         </Home.IconContent>
         <Box sx={{
-          p: 2,
-          fontSize: 14,
+          p: 1,
+          pl: { xs: 4, md: 0 },
         }}
         >
-          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}> KONTAKTAI</Typography>
-          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Mob.: +37 0 555555555555</Typography>
-          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Adresas.: tenkurgrazu 100 g. Simtasbalu</Typography>
-          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Fax.: 88888888</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}> Kontaktiniai duomenys</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Fax.: 88888</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Mob.: +37 0 55555555</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'Montserrat' }}>Adresas.: tenkurgrazu g. 100, Simtasbalu</Typography>
         </Box>
       </Home.Footer>
     </Container>

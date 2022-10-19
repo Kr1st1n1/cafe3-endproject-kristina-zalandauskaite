@@ -7,10 +7,11 @@ npm i
 
 ## launch server
 ```
-npm run server
+
+npm start 
 ```
 
 ## launch client 
 ```
-npm run start
+npm  start
 ```

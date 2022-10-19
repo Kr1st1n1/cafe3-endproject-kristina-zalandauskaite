@@ -71,7 +71,7 @@ const Navbar = () => {
                   to={to}
                   onClick={() => setCurrentButton(i)}
                   style={{
-                    color: currentButton === i ? 'white' : 'white',
+                    color: currentButton === i ? 'white' : 'none',
                     boxShadow: currentButton === i ? 'inset 0 -2px 0 white' : 'none',
                   }}
                 >

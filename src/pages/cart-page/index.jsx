@@ -7,7 +7,7 @@ import List from './components/list';
 
 const CartPage = () => (
 
-  <Box sx={{ backgroundColor: 'common.main', height: '100vh' }}>
+  <Box sx={{ backgroundColor: 'common.main', minHeight: '100vh' }}>
     <Container maxWidth="false" sx={{ maxWidth: '1400px', backgroundColor: 'common.dark' }}>
       <Box sx={{
         pt: 3,

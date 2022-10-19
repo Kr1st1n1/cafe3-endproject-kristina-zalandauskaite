@@ -9,7 +9,7 @@ const Content = ({ house }) => (
       maxWidth: 1400,
     }}
   >
-    <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-around' }}>
+    <Box sx={{ display: { md: 'flex', flexDirection: 'column' }, justifyContent: 'space-around' }}>
       <InfoSection house={house} />
       <Divider />
       <CommerceSection house={house} />

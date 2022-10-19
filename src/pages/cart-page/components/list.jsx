@@ -31,6 +31,8 @@ const List = () => {
   } = useCart();
   const [cartItems, setCartItems] = React.useState([]);
 
+  const total = cartItems.reduce((prevSum, { count, price }) => prevSum + count * price, 0);
+
   React.useEffect(() => {
     (async () => {
       if (cartItemsData.length > 0) {
@@ -41,8 +43,6 @@ const List = () => {
       }
     })();
   }, [cartItemsData]);
-
-  const total = cartItems.reduce((prevSum, { count, price }) => prevSum + count * price, 0);
 
   return (
     <Box sx={{
@@ -92,7 +92,7 @@ const List = () => {
               count={count}
               setCount={(newCount) => addToCart({ id, count: newCount })}
               price={price}
-              textProps={[category.title]}
+              textProps={category.title}
               deleteItem={() => deleteItem(id)}
             />
           ))}

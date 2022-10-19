@@ -56,10 +56,10 @@ const ItemCard = ({
           { loading ? (
             <Box sx={{
               position: 'absolute',
-              top: 0,
-              left: 0,
-              height: '100%',
-              width: '100%',
+              top: 72,
+              left: 64,
+              height: '55%',
+              width: '55%',
               p: 5,
             }}
             >

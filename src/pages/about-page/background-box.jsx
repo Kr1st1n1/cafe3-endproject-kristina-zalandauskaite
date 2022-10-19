@@ -7,7 +7,7 @@ import BgImage from '../../assets/bg-about.jpg';
 const AboutPage = () => (
   <Box sx={{
     backgroundImage: `url(${BgImage})`,
-    backgroundRepeat: 'no-repeat',
+    backgroundRepeat: 'repeat',
     backgroundPosition: 'center',
     minHeight: '30vh',
     pt: '100px',

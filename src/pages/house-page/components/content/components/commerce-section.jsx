@@ -1,47 +1,26 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import AmountField from '../../../../../components/amount-field';
+import { Box, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import useCart from '../../../../../hooks/useCart';
 
-const CommerceSection = ({ house }) => {
-  const {
-    getItemCount,
-    addToCart,
-    changeCartItemCount,
-    deleteItem,
-  } = useCart();
-  const count = getItemCount(house.id);
-
-  const increaseHouseCount = () => {
-    const cartItem = { id: house.id, count: count + 1 };
-
-    if (count === 0) addToCart(cartItem);
-    else changeCartItemCount(cartItem);
-  };
-
-  const decreaseHouseCount = () => {
-    if (count - 1 === 0) deleteItem(house.id);
-    else changeCartItemCount({ id: house.id, count: count - 1 });
-  };
+const CommerceSection = () => {
+  useCart();
 
   return (
     <Box component="pre">
-      <Typography variant="h4" sx={{ mb: 4 }}>Užsakymas</Typography>
-      <Box sx={{ display: 'flex', gap: 6 }}>
-        <Box>
-          <Typography variant="h6" sx={{ mb: 1 }}>Norimas dienų skaičius:</Typography>
-          <AmountField
-            amount={count}
-            onInc={increaseHouseCount}
-            onDec={decreaseHouseCount}
-            min={0}
-          />
-        </Box>
-        <Box>
-          <Typography variant="h6" sx={{ mb: 1 }}>Viso:</Typography>
-          <Typography variant="h6" sx={{ mb: 1 }}>{`${count * house.price}$`}</Typography>
-        </Box>
-      </Box>
+      <Button>
+        Rezervacija telefonu: +000 0035 658888
+      </Button>
+      <Link
+        to="/shop"
+        style={{
+          color: '#1C3879', textDecoration: 'none', display: 'flex', gap: 7,
+        }}
+      >
+        <KeyboardBackspaceIcon fontSize="large" />
+        <Typography variant="h6" sx={{ color: 'black', fontWeight: 700 }}>Grįžti atgal</Typography>
+      </Link>
     </Box>
   );
 };

@@ -45,9 +45,10 @@ const ShopPage = () => {
             variant="h5"
             component="h2"
             sx={{
-              fontSize: '1rem',
+              fontSize: '18px',
               py: 3,
               fontFamily: 'Montserrat',
+              fontWeight: 700,
             }}
           >
             NAMELIAI NUOMAI
@@ -56,7 +57,7 @@ const ShopPage = () => {
             variant="h5"
             component="h3"
             sx={{
-              fontSize: '0.9rem',
+              fontSize: '16px',
               py: 3,
               fontFamily: 'Montserrat',
             }}

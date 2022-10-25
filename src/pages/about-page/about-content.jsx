@@ -8,7 +8,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import Image from '../../components/image';
 import ImageAbout from '../../assets/cabinone.jpg';
-import ImageAtgaiva from '../../assets/about-pic.jpg';
+import CheckPoints from './checkPoints';
+import ImageMeditation from '../../assets/meditation.jpg';
+import ForestRouds from '../../assets/forestrouds.jpg';
+import SpaImage from '../../assets/spa.jpg';
 
 const AboutContent = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -42,30 +45,26 @@ const AboutContent = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Box sx={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' },
+              display: 'flex', alignItems: 'center', justifyContent: 'space-around', flexDirection: { xs: 'column', md: 'row' },
             }}
             >
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-                <Typography sx={() => ({
-                  fontSize: '14px',
-                  alignText: 'center',
-                  color: 'primary.dark',
-                  px: { xs: 1, md: 5 },
-                  fontFamily: 'Montserrat',
-                })}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. N
-                  emo, voluptate! Nesciunt, minima
-                  veritatis unde officiis veniam eos sequi eligendi illo voluptatem
-                  porro et sit fuga iste esse, dolores eaque sed.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-                </Typography>
-              </Box>
+              <Typography sx={{ maxWidth: 450, fontSize: '14px' }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum quos incidunt reiciendis eveniet
+                adipisci natus eaque quaerat iusto, aperiam quae tempore earum debitis
+                perferendis quidem ab quo ea explicabo doloremque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum quos incidunt reiciendis eveniet
+                adipisci natus eaque quaerat iusto, aperiam quae tempore earum debitis
+                perferendis quidem ab quo ea explicabo doloremque.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum quos incidunt reiciendis eveniet
+                adipisci natus eaque quaerat iusto, aperiam quae tempore earum debitis
+                perferendis quidem ab quo ea explicabo doloremque.
+              </Typography>
 
               <Box sx={{
-                maxWidth: 300,
-                pt: { xs: 4, lg: 0 },
+                pt: { xs: 4, lg: 0 }, display: 'flex', alignSelf: 'center', pl: { xs: 0, lg: 20 },
               }}
               >
                 <Image
@@ -73,7 +72,7 @@ const AboutContent = () => {
                   sx={{
                     borderRadius: '4px',
                     boxShadow: '-5px 9px 13px 0px',
-                    width: { xs: '200px', lg: '250px' },
+                    width: { xs: '200px', lg: '300px' },
                   }}
                 />
               </Box>
@@ -102,38 +101,25 @@ const AboutContent = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Box sx={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' },
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: { xs: 'column', md: 'row' },
             }}
             >
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-                <Typography sx={() => ({
-                  fontSize: '14px',
-                  alignText: 'center',
-                  color: 'primary.dark',
-                  px: { xs: 1, md: 5 },
-                  fontFamily: 'Montserrat',
-                })}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. N
-                  emo, voluptate! Nesciunt, minima
-                  veritatis unde officiis veniam eos sequi eligendi illo voluptatem
-                  porro et sit fuga iste esse, dolores eaque sed.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-                </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CheckPoints />
+                <CheckPoints />
+                <CheckPoints />
               </Box>
 
               <Box sx={{
-                maxWidth: 300,
-                pt: { xs: 4, lg: 0 },
+                pt: { xs: 4, lg: 0 }, pb: 4, display: 'flex', alignSelf: 'center', pl: { xs: 0, lg: 20 },
               }}
               >
                 <Image
-                  src={ImageAtgaiva}
+                  src={ImageMeditation}
                   sx={{
                     borderRadius: '4px',
                     boxShadow: '-5px 9px 13px 0px',
-                    width: { xs: '200px', lg: '250px' },
+                    width: { xs: '200px', lg: '300px' },
                   }}
                 />
               </Box>
@@ -162,38 +148,29 @@ const AboutContent = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Box sx={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' },
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: { xs: 'column', md: 'row' },
             }}
             >
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-                <Typography sx={() => ({
-                  fontSize: '14px',
-                  alignText: 'center',
-                  color: 'primary.dark',
-                  px: { xs: 1, md: 5 },
-                  fontFamily: 'Montserrat',
-                })}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. N
-                  emo, voluptate! Nesciunt, minima
-                  veritatis unde officiis veniam eos sequi eligendi illo voluptatem
-                  porro et sit fuga iste esse, dolores eaque sed.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-                </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CheckPoints />
+                <CheckPoints />
+                <CheckPoints />
               </Box>
 
               <Box sx={{
-                maxWidth: 300,
                 pt: { xs: 4, lg: 0 },
+                pb: 4,
+                display: 'flex',
+                alignSelf: 'center',
+                pl: { xs: 0, lg: 5 },
               }}
               >
                 <Image
-                  src={ImageAtgaiva}
+                  src={ForestRouds}
                   sx={{
                     borderRadius: '4px',
                     boxShadow: '-5px 9px 13px 0px',
-                    width: { xs: '200px', lg: '250px' },
+                    width: { xs: '200px', lg: '300px' },
                   }}
                 />
               </Box>
@@ -222,38 +199,29 @@ const AboutContent = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Box sx={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: { xs: 'column', md: 'row' },
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: { xs: 'column', md: 'row' },
             }}
             >
-              <Box sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-                <Typography sx={() => ({
-                  fontSize: '14px',
-                  alignText: 'center',
-                  color: 'primary.dark',
-                  px: { xs: 1, md: 5 },
-                  fontFamily: 'Montserrat',
-                })}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. N
-                  emo, voluptate! Nesciunt, minima
-                  veritatis unde officiis veniam eos sequi eligendi illo voluptatem
-                  porro et sit fuga iste esse, dolores eaque sed.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-
-                </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <CheckPoints />
+                <CheckPoints />
+                <CheckPoints />
               </Box>
 
               <Box sx={{
-                maxWidth: 300,
                 pt: { xs: 4, lg: 0 },
+                pb: 4,
+                display: 'flex',
+                alignSelf: 'center',
+                pl: { xs: 0, lg: 5 },
               }}
               >
                 <Image
-                  src={ImageAtgaiva}
+                  src={SpaImage}
                   sx={{
                     borderRadius: '4px',
                     boxShadow: '-5px 9px 13px 0px',
-                    width: { xs: '200px', lg: '250px' },
+                    width: { xs: '200px', lg: '300px' },
                   }}
                 />
               </Box>

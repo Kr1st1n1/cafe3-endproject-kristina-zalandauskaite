@@ -4,7 +4,7 @@ import {
   Typography,
   Divider,
 } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SpaIcon from '@mui/icons-material/Spa';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
 import Item from './item';
@@ -18,6 +18,8 @@ const getFormattedItems = async (cartItemsData) => {
   const fetchedItemsWithCount = fetchedCartItems.map((fetchedItem) => ({
     ...fetchedItem,
     count: cartItemsData.find((cartItem) => cartItem.id === fetchedItem.id)?.count ?? 0,
+    startDate: cartItemsData.find((cartItem) => cartItem.id === fetchedItem.id)?.start_date ?? 0,
+    endDate: cartItemsData.find((cartItem) => cartItem.id === fetchedItem.id)?.end_date ?? 0,
   }));
 
   return fetchedItemsWithCount;
@@ -26,12 +28,10 @@ const getFormattedItems = async (cartItemsData) => {
 const List = () => {
   const {
     cartItems: cartItemsData,
-    addToCart,
     deleteItem,
+    addToCart,
   } = useCart();
   const [cartItems, setCartItems] = React.useState([]);
-
-  const total = cartItems.reduce((prevSum, { count, price }) => prevSum + count * price, 0);
 
   React.useEffect(() => {
     (async () => {
@@ -46,7 +46,7 @@ const List = () => {
 
   return (
     <Box sx={{
-      display: 'flex', alignself: 'center', width: '100%', flexDirection: 'column',
+      display: 'flex', alignself: 'center', flexDirection: 'column',
     }}
     >
       <Box sx={{
@@ -54,8 +54,8 @@ const List = () => {
       }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h5">Prekių krepšelis</Typography>
-          <ShoppingCartIcon sx={{ color: '#1C3879', fontSize: 45 }} />
+          <Typography variant="h5" sx={{ fontFamily: 'Montserrat' }}>Jūsų rezervacijos</Typography>
+          <SpaIcon sx={{ color: 'common.dark', fontSize: 45 }} />
         </Box>
         <Link
           to="/shop"
@@ -63,8 +63,15 @@ const List = () => {
             color: '#1C3879', textDecoration: 'none', display: 'flex', gap: 7,
           }}
         >
-          <KeyboardBackspaceIcon fontSize="large" />
-          <Typography variant="h6" sx={{ color: 'black', fontWeight: 700 }}>Grįžti atgal</Typography>
+          <KeyboardBackspaceIcon fontSize="small" />
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'black', fontWeight: 700, fontSize: '14px', fontFamily: 'Montserrat',
+            }}
+          >
+            Grįžti atgal
+          </Typography>
         </Link>
         <Divider sx={{ pt: 3 }} />
         <Box sx={{
@@ -76,7 +83,10 @@ const List = () => {
           <Box sx={{ display: 'flex', justifyContent: 'right' }} />
         </Box>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'right' }}>
+        <Box sx={{
+          display: 'flex', flexDirection: 'column', justifyContent: { xs: 'space-between', lg: 'right' },
+        }}
+        >
           {cartItems.map(({
             id,
             images,
@@ -84,20 +94,27 @@ const List = () => {
             price,
             count,
             category,
+            startDate,
+            endDate,
           }) => (
             <Item
               key={id}
               images={images}
               title={title}
               count={count}
-              setCount={(newCount) => addToCart({ id, count: newCount })}
+              startDate={Date.parse(startDate)}
+              endDate={endDate ? Date.parse(endDate) : null}
+              setCount={(date, which) => addToCart({
+                id, count: 1, ob: date, w: which,
+              })}
               price={price}
-              textProps={category.title}
+              textProps={[category.title]}
               deleteItem={() => deleteItem(id)}
             />
           ))}
         </Box>
-        <Footer totalPrice={total} />
+
+        <Footer />
       </Box>
     </Box>
   );

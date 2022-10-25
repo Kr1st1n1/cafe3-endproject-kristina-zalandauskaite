@@ -101,16 +101,24 @@ const Filters = ({ drawerWidth }) => {
             FILTRAI
           </Typography>
           <Box sx={{ width: drawerWidth }}>
-            <FormControl sx={{ width: '100%' }}>
+            <FormControl sx={{
+              width: '100%', my: 5, display: 'flex', alignContent: 'center',
+            }}
+            >
               <Typography
                 variant="h7"
                 sx={{
-                  display: 'flex', alignSelf: 'center', pt: 7, fontSize: '18px', fontFamily: 'Monserrat',
+                  display: 'flex', alignSelf: 'center', pt: 7, pb: 2, fontSize: '18px', fontFamily: 'Monserrat',
                 }}
               >
                 Kaina
               </Typography>
-              <Box>
+              <Box sx={{
+                width: 250,
+                display: 'flex',
+                alignSelf: { xs: 'center' },
+              }}
+              >
                 <Slider
                   valueLabelDisplay="on"
                   value={priceRange}
@@ -124,7 +132,7 @@ const Filters = ({ drawerWidth }) => {
           </Box>
           <AutoSelectField
             options={categories}
-            value={category}
+            value={category.id}
             onChange={handleCategoryChange}
             getOptionLabel={({ title }) => title}
           />
@@ -135,6 +143,7 @@ const Filters = ({ drawerWidth }) => {
             sx={{
               minWidth: 180,
               display: 'flex',
+              my: { sx: 5, md: 0 },
             }}
           >
             <Typography sx={{ fontFamily: 'Monseratt', fontSize: 14 }}> Pašalinti filtrus</Typography>

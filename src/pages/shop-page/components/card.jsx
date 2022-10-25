@@ -46,7 +46,6 @@ const ItemCard = ({
     }}
     >
       <Box>
-
         <Box sx={{
           position: 'relative',
           width: '100%',

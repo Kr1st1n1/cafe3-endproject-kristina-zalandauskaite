@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import useCart from '../../../../../hooks/useCart';
@@ -8,10 +8,33 @@ const CommerceSection = () => {
   useCart();
 
   return (
-    <Box component="pre">
-      <Button>
-        Rezervacija telefonu: +000 0035 658888
-      </Button>
+    <Box
+      component="pre"
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column' },
+        pt: 10,
+        justifyContent: 'center',
+        width: '100%',
+        alignItems: 'center',
+      }}
+    >
+      <Box sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column' },
+      }}
+      >
+        <Typography sx={{
+          fontSize: '12px',
+          fontFamily: 'Monserrat',
+        }}
+        >
+          Rezervacija telefonu:
+        </Typography>
+        <Typography>
+          +000 0035 5252
+        </Typography>
+      </Box>
       <Link
         to="/shop"
         style={{

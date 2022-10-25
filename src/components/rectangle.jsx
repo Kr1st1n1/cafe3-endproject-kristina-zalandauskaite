@@ -10,9 +10,9 @@ const Rectangle = ({
   <Box
     sx={[
       {
-        pt: { xs: `${heightProportion * 100}%`, md: `${heightProportion * 50}%` },
+        pt: { xs: `${heightProportion * 100}%`, md: `${heightProportion * 25}%` },
         position: 'relative',
-        width: { xxl: '50%' },
+        width: { md: '25%' },
       },
       ...(sx instanceof Array ? sx : [sx]),
     ]}

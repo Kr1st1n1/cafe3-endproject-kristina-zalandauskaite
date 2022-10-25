@@ -13,7 +13,6 @@ const authReducer = (currentState, action) => {
     ...currentState,
   };
 
-  // State Mutations
   switch (action.type) {
     case AUTH_LOADING: {
       newState.loading = true;
@@ -71,11 +70,11 @@ const authReducer = (currentState, action) => {
     }
   }
 
-  console.log(
-    `%c${action.type}: %c${JSON.stringify(newState, null, 4)}`,
-    'color: blue',
-    'font-weight: 700',
-  );
+  // console.log(
+  //   `%c${action.type}: %c${JSON.stringify(newState, null, 4)}`,
+  //   'color: blue',
+  //   'font-weight: 700',
+  // );
 
   return newState;
 };

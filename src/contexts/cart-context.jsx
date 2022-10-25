@@ -31,11 +31,6 @@ export const CartProvider = ({ children }) => {
 
     getItemCount: (id) => cartItems.find((x) => x.id === id)?.count ?? 0,
 
-    /* changeCartItemCount: ({ id, count }) => setItems(
-      alert('test'),
-      cartItems.map((x) => (x.id === id ? { id, count } : x)),
-    ), */
-
     deleteItem: (id) => setItems(cartItems.filter((x) => x.id !== id)),
 
   }), [cartItems, setItems]);

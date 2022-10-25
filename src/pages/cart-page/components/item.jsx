@@ -40,15 +40,12 @@ const Item = ({
   setCount,
 }) => {
   const [checkInDate, setCheckInDate] = React.useState(startDate);
-
   const [checkOutDate, setCheckOutDate] = React.useState(endDate);
-
   const dayCount = moment(checkOutDate).diff(moment(checkInDate), 'days') + 1;
 
   const handleCheckInDate = (date) => {
     setCount(date, 1);
     setCheckInDate(date);
-    // setCheckOutDate();
   };
 
   const handleCheckOutDate = (date) => {

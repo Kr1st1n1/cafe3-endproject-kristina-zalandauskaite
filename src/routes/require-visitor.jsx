@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-import { authClearRedirect } from '../../store/auth/auth-actions';
+import useAuth from '../hooks/useAuth';
+import { authClearRedirect } from '../store/auth/auth-actions';
 
 const RequireVisitor = ({ children: Page }) => {
   const { loggedIn, redirect, dispatch } = useAuth();

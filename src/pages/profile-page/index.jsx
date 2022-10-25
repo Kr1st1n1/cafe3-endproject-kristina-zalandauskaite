@@ -16,6 +16,7 @@ import AuthService from '../../services/auth-service';
 import Image from '../../components/image';
 import useAuth from '../../hooks/useAuth';
 import { createAuthUpdateProfileThunkAction } from '../../store/auth/auth-actions';
+import NoImg from '../../assets/no-img.jpg';
 
 const convertFileToUrl = (file) => new Promise((resolve, reject) => {
   const reader = new FileReader();
@@ -115,7 +116,7 @@ const ProfilePage = () => {
         <Box sx={{ position: 'relative', height: 240, width: 240 }}>
           <Image
             sx={{ borderRadius: '50%' }}
-            src={imgString ?? user.img ?? '/no-img.jpg'}
+            src={imgString ?? user.img ?? { NoImg }}
           />
           <Box sx={{
             position: 'absolute',

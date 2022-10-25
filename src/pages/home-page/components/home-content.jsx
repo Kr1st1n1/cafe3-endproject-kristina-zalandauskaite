@@ -6,6 +6,9 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import BgImage from '../../../assets/forest.jpg';
+import BalanceImg from '../../../assets/balance.png';
+import StrongImg from '../../../assets/stiprybe.jpg';
+import RunAwayImg from '../../../assets/pabegimas.jpg';
 import * as Home from './index';
 
 const HomeContent = () => (
@@ -99,7 +102,7 @@ const HomeContent = () => (
         >
           <Box
             component="img"
-            src="/stiprybe.jpg"
+            src={StrongImg}
             sx={{
               width: { sm: '37%', xs: '43%' },
               position: 'absolute',
@@ -114,7 +117,7 @@ const HomeContent = () => (
           />
           <Box
             component="img"
-            src="/balancas.png"
+            src={BalanceImg}
             sx={{
               position: 'absolute',
               width: { sm: '37%', xs: '44%' },
@@ -129,7 +132,7 @@ const HomeContent = () => (
           />
           <Box
             component="img"
-            src="/pabegimas.jpg"
+            src={RunAwayImg}
             sx={{
               position: 'absolute',
               width: { sm: '37%', xs: '45%' },

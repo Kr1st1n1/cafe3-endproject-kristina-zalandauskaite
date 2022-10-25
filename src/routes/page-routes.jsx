@@ -1,18 +1,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import MainLayout from '../../layouts/main-layout';
-import AuthLayout from '../../layouts/auth-layout';
-import RegisterPage from '../register-page';
-import LoginPage from '../login-page';
-import HomePage from '../home-page';
-import ShopPage from '../shop-page';
-import AboutPage from '../about-page';
-import ErrorPage from '../error-page';
-import CartPage from '../cart-page';
-import HousePage from '../house-page';
-import OrderPage from '../order-page';
-import ProfilePage from '../profile-page';
+import MainLayout from '../layouts/main-layout';
+import AuthLayout from '../layouts/auth-layout';
+import RegisterPage from '../pages/register-page';
+import LoginPage from '../pages/login-page';
+import HomePage from '../pages/home-page';
+import ShopPage from '../pages/shop-page';
+import AboutPage from '../pages/about-page';
+import ErrorPage from '../pages/error-page';
+import CartPage from '../pages/cart-page';
+import HousePage from '../pages/house-page';
+import OrderPage from '../pages/order-page';
+import ProfilePage from '../pages/profile-page';
 
 import RequireVisitor from './require-visitor';
 import RequireAuth from './require-auth';

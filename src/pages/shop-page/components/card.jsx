@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import useCart from '../../../hooks/useCart';
 import Image from '../../../components/image';
+import loadingGif from '../../../assets/loading.gif';
 
 const wait = (ms) => new Promise((res) => { setTimeout(() => res(), ms); });
 
@@ -62,7 +63,7 @@ const ItemCard = ({
               p: 5,
             }}
             >
-              <Image src="/loading.gif" />
+              <Image src={loadingGif} />
             </Box>
           ) : (
             <CardMedia

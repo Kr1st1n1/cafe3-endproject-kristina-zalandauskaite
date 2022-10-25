@@ -6,7 +6,7 @@ import { styled } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import useAuth from './hooks/useAuth';
 import { CartProvider } from './contexts/cart-context';
-import PageRoutes from './pages/routes/page-routes';
+import PageRoutes from './routes/page-routes';
 
 const delay = 700;
 
